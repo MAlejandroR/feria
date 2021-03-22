@@ -9,9 +9,9 @@ module.exports = {
 
     theme: {
         extend: {
-            backgroundImage:theme=>({ // imágenes de background nada definitivo ...
-            "img_ponencias":"url('/images/background/bg_cubes.jpg')",
-            "fondo_feria" :"url('/images/background/fondo_feria.png')",
+            backgroundImage: theme => ({ // imágenes de background nada definitivo ...
+                "img_ponencias": "url('/images/background/bg_cubes.jpg')",
+                "fondo_feria": "url('/images/background/fondo_feria.png')",
             }),
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
@@ -33,6 +33,15 @@ module.exports = {
                 'fondo1': "#9F9E9F",
                 'fondo3': "#D5D5Db",
                 'fondo2': "#EDEDED",
+                'cabecera_modal':"#A3B3CF",
+            },
+            inset: {
+                "1/5": "20%",
+                "15": "15%",
+            },
+            inset: {
+                "1/5": "20%",
+                "15": "15%",
             },
             height: {
                 "5v": "5vh",
@@ -47,24 +56,26 @@ module.exports = {
                 "70v": "70vh",
                 "75v": "75vh",
                 "80v": "80vh",
-               "90v": "90vh",
+                "90v": "90vh",
                 "100v": "100vh",
             },
-            width : {
+            width: {
                 "10v": "10vw",
                 "15v": "15vw",
                 "65v": "65vw",
                 "20v": "20vw",
                 "30v": "30vw",
                 "40v": "40vw",
+                "49v": "49vw",
                 "50v": "50vw",
                 "60v": "60vw",
                 "70v": "70vw",
+                "75v": "75vw",
                 "80v": "80vw",
                 "90v": "90vw",
                 "100v": "100vw",
             },
-            translate:['active','group_hover'],
+            translate: ['active', 'group_hover'],
 
         },
 

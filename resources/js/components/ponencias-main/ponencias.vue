@@ -1,45 +1,57 @@
 <template>
     <!--        <h1>Estoy en ponencias</h1>-->
-    <div class="relative bg-white p-3 rounded cursor-wait" ref='elemento'
-         @mouseover="mouse_over"
-         @mouseleave="mouse_leave">
-        <div class="z-10 w-5v h-5v">
-            <h1> {{ empresa.empresa }}</h1>
-            <div class="bg-white rounded-3xl p-3 w-10v h-10v auto-cols-max">
-                <img :src=src alt="" class = "max-w-5v max-h-5v">
-            </div>
+    <div class="relative bg-white p-3 rounded cursor-pointer " ref='elemento'
+         @click="muestra_oculta_detalle">
+        <!--         @mouseleave="mouse_leave">-->
+        <div class="z-10 flex flex-row justify-center items-center">
 
-
-            <hr/>
+            <!--            <div class="bg-white rounded-3xl p-3 w-10v h-10v auto-cols-max">-->
+            <img :src=src alt="" class="max-w-5v max-h-5v w-20 h-20 rounded-lg mx-auto ">
+            <h1> {{ empresa_actual.empresa }}</h1>
         </div>
-        <div class="cursor-default relative top left-10 divide-x divide-yellow-600 panel_empresa flex flex-row justify-between" span v-if="hover">
-            <img :src="'/storage/logos/'+empresa.logo" alt="logo" class=" relative max-w-20 max-h-20  p-2 mr-15">
-            <!--                <div class="flex flex-col justify-around text-blue-700 font-mono">-->
-            <div class="flex flex-col justify-start divide-y-3 divide-green-700">
-                <div class="mx-5 text-purple-700 text- text-monospace">{{ empresa.empresa }}</div>
-                <!--                    <div class="flex flex-row ">-->
-                <div>
-                    <div class="mx-5"> {{ empresa.duracion }} minutos</div>
-                    <div class="ml-5">Comienza {{ empresa.horario }}</div>
-                </div>
-                <div>
-                    <a class="text-red-800 hover:text-blue-700" :href="empresa.enlace">Acceder a la charla</a>
-                </div>
 
-            </div>
-        </div>
+
     </div>
+
+<modal_empresa :showing="seleccionado" :empresa="empresa_actual"  @close="seleccionado = false">
+</modal_empresa>
+<!--    <div-->
+<!--        class="cursor-default relative top left-10 divide-x divide-yellow-600 panel_empresa flex flex-row-->
+<!--            justify-between"-->
+<!--        span v-if="seleccionado">-->
+<!--        <img :src="'/storage/logos/'+empresa.logo" alt="logo" class=" relative max-w-20 max-h-20  p-2 mr-15">-->
+<!--        &lt;!&ndash;                <div class="flex flex-col justify-around text-blue-700 font-mono">&ndash;&gt;-->
+<!--        <div class="flex flex-col justify-start divide-y-3 divide-green-700">-->
+<!--            <div class="mx-5 text-purple-700 text- text-monospace">{{ empresa.empresa }}</div>-->
+<!--            &lt;!&ndash;                    <div class="flex flex-row ">&ndash;&gt;-->
+<!--            <div>-->
+<!--                <div class="mx-5"> {{ empresa.duracion }} minutos</div>-->
+<!--                <div class="ml-5">Comienza {{ empresa.horario }}</div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <a class="text-red-800 hover:text-blue-700" :href="empresa.enlace">Acceder a la charla</a>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
 
 </template>
 
 
 <script>
+
+import modal_empresa from "./modal_empresa.vue";
 export default {
+components:{
+    modal_empresa
+},
+
     props: ['src', 'empresa'],
     data() {
         return {
-            empresa: JSON.parse(this.empresa),
-            hover: false,
+            empresa_actual: JSON.parse(this.empresa),
+            seleccionado: false,
             pos_x: 0,
             pos_y: 0,
         }
@@ -57,12 +69,15 @@ export default {
 
     },
     methods: {
-        mouse_over: function (event) {
+        muestra_oculta_detalle: function () {
+            this.seleccionado = this.seleccionado == true ? false : true;
+        },
 
-            this.hover = true;
-            console.log("Hola");
+        mouse_over: function (event) {
+            this.seleccionado = true;
+            // console.log("Hola");
             let el = this.$refs['elemento'];
-            console.log(el); //get height
+            // console.log(el); //get height
             this.pos_x = el.getBoundingClientRect().top;
             this.pos_y = el.getBoundingClientRect().left;
 
@@ -70,11 +85,11 @@ export default {
             // var y = this.$ref.getBoundingClientRect().left;
             var y = event.clientY;
             // console.log("Hola: X: " + x + "Y: " + y);
-            console.log(this.$ref.getBoundingClientRect().height) //get height
+            // console.log(this.$ref.getBoundingClientRect().height) //get height
 
         },
         mouse_leave: function (event) {
-            this.hover = false;
+            this.seleccionado = false;
             console.log("Adiós");
 
         }

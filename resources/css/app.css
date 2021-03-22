@@ -2,21 +2,26 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.ppal{
+.ppal {
     @apply flex flex-col flex-1 justify-between h-screen mx-10 bg-contain bg-fondo_feria;
 }
-.panel_empresa{
+
+.panel_empresa {
     @apply z-50
     transition ease-in duration-500
     w-20v h-20v bg-gray-200 rounded
     border border-red-600 ;
 }
-.boton1{
+
+
+.boton1 {
     @apply hidden md:block  text-2xl bg-fondo font-semibold border border-red-600 rounded hover:bg-red-600
     hover:text-white  hover:border-transparent  transition  ease-in duration-200
-    transform hover:-translate-y-1;}
+    transform hover:-translate-y-1;
+}
+
 /*active:translate-y-0 */
-.boton2{
+.boton2 {
     @apply m-1 py-2 px-4
     2xl:bg-red-200
     text-red-800
@@ -28,8 +33,9 @@
     ease-in duration-200
     transform hover:-translate-y-1;
 }
+
 /*    active:translate-y-0*/
-.botonFamilia{
+.botonFamilia {
     @apply inline-flex
     items-center
     px-4
@@ -50,18 +56,22 @@
     disabled:opacity-25
     transition ease-in-out duration-150 m-2;
 }
-.active{
-    @apply    transform    translate-x-4    translate-y-4 bg-purple-300
-               transition duration-500 bg-blue-600 bg-red-600 transform -translate-y-1 scale-110;
+
+.active {
+    @apply transform    translate-x-4    translate-y-4 bg-purple-300
+    transition duration-500 bg-blue-600 bg-red-600 transform -translate-y-1 scale-110;
 }
+
 /*active:bg-gray-900*/
-.pediente{
-@apply  animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75;
+.pediente {
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75;
 }
-.transmitiendose{
+
+.transmitiendose {
     @apply animate-spin h-5 w-5 mr-3 ;
 
 }
-.finalizada{
-@apply  bg-gray-400;
+
+.finalizada {
+    @apply bg-gradient-to-r bg-gray-400;
 }

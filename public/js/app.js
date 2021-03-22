@@ -16525,7 +16525,8 @@ __webpack_require__.r(__webpack_exports__);
   //     return: [route_form]
   // },
   mounted: function mounted() {
-    video.volume = 0.4;
+    video.volume = 0.4; // this.$refs.videoRef.play();
+
     console.log("valor pasado " + this.imagen);
   }
 });
@@ -16561,7 +16562,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.ordena_nombre();
     this.actualiza_hora();
-    this.add_property_empresa(); // this.allProducts();
+    this.add_property_empresa();
   },
   mounted: function mounted() {
     var self = this;
@@ -16588,22 +16589,28 @@ __webpack_require__.r(__webpack_exports__);
       var comienzo;
       var fin;
       var actual;
-      var duracion;
+      var duracion; // console.log("En estado de ponencia");//36600
+
       horaComienzoPonencia = parseInt(horario.substr(0, 2));
       minutoComienzoPonencia = parseInt(horario.substr(3, 2));
       comienzo = horaComienzoPonencia * 3600 + minutoComienzoPonencia * 60;
-      actual = this.hora * 3600 + this.minutos * 60;
+      actual = this.hora * 3600 + this.minutos * 60; // console.log("En obtener estado de ponencia hora " + this.hora)
+      // console.log("En obtener estado de ponencia minutos " + this.minutos)
+      //
+      // console.log("En obtener estado de ponencia, Actual " + actual);//47400 (13:10)
+
       duracion = parseInt(duracion) * 60;
-      fin = comienzo + duracion;
+      fin = comienzo + duracion; // console.log("En obtener estado de ponencia, Comienzo " + comienzo + " Fin " + fin);//47400 (13:10)
+
       if (actual < comienzo) return "pendiente";
 
       if (actual >= comienzo) {
-        console.log("Actual + duracion  " + actual + " Duracon" + duracion + " Comienzo : " + comienzo);
+        // console.log("Actual + duracion  " + actual + " Duracon" + duracion + " Comienzo : " + comienzo);
         var tmp = actual + duracion;
 
-        if (tmp < fin) {
-          var msj = "Actual:" + this.hora + ":" + this.minutos + "- Comienzo,duracion: " + horaComienzoPonencia + "-" + duracion + "-Actual, comienzo y fin: " + actual + "-" + comienzo + "-" + fin;
-          console.log("Transmitiendo " + msj);
+        if (actual < fin) {
+          var msj = "Actual:" + this.hora + ":" + this.minutos + "- Comienzo,duracion: " + horaComienzoPonencia + "-" + duracion + "-Actual, comienzo y fin: " + actual + "-" + comienzo + "-" + fin; // console.log("Transmitiendo " + msj);
+
           return "transmitiendo";
         } else // return "finalizada"+this.hora+":"+this.minutos+"-"+horaComienzoPonencia+"-"+duracion+"-"+actual+"-"+comienzo+"-"+fin ;
           return "finalizada";
@@ -16617,31 +16624,30 @@ __webpack_require__.r(__webpack_exports__);
     estado_ponencia: function estado_ponencia() {
       var _this = this;
 
-      // console.log("Valor de estado:1 "+ self.listado_dinamico[0].empresa);
+      // console.log("En estado ponencia 1 ");
       var self = this;
       this.listado_dinamico.forEach(function (empresa) {
         // console.log("Hola en estado_pnencia");
         var estado;
         var hora_ponencia = empresa.horario.substr(0, 2);
-        var minutos_ponencia = empresa.horario.substr(3, 2);
-        ;
-        console.log("hora ponencias " + hora_ponencia);
-        console.log("minutos  " + minutos_ponencia);
-        estado = _this.obtener_estado_ponencia(empresa.horario, empresa.duracion);
-        console.log("Valor de estado: -" + estado + "-");
+        var minutos_ponencia = empresa.horario.substr(3, 2); // console.log("hora ponencias " + hora_ponencia);
+        // console.log("minutos  " + minutos_ponencia);
+        // console.log("En estado ponencia");
+
+        estado = _this.obtener_estado_ponencia(empresa.horario, empresa.duracion); // console.log("Valor de estado: -" + estado + "-");
+
         empresa.estado_ponencia = estado; // console.log("Valor de estado: 2");
       });
     },
     actualiza_hora: function actualiza_hora() {
-      var reloj = new Date(Date.now()); // this.hora = reloj.getHours();
-      // this.minutos = reloj.getMinutes();
-
-      this.segundos = reloj.getSeconds(); // this.horas = this.horas > 9? this.horas: "0"+this.horas;
-      // this.minutos = this.minutos > 9? this.minutos: "0"+this.minutos;
-
-      this.segundos = this.segundos > 9 ? this.segundos : "0" + this.segundos;
-      this.hora = 13;
-      this.minutos = 10;
+      var reloj = new Date(Date.now());
+      this.hora = reloj.getHours();
+      this.minutos = reloj.getMinutes();
+      this.segundos = reloj.getSeconds();
+      this.horas = this.horas > 9 ? this.horas : "0" + this.horas;
+      this.minutos = this.minutos > 9 ? this.minutos : "0" + this.minutos;
+      this.segundos = this.segundos > 9 ? this.segundos : "0" + this.segundos; // this.hora = 11;
+      // this.minutos = 50;
     },
     ordena_horario: function ordena_horario() {
       // console.log(this.listado);
@@ -16678,6 +16684,132 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  // name: 'modalEmpresa',
+  props: ['showing', 'empresa'],
+  data: function data() {
+    return {
+      crono_empezar: [],
+      msj_crono: "00:00:00",
+      crono_horas: "00",
+      crono_minutos: "00",
+      crono_segundos: "00",
+      crono: "00:00:00",
+      ponencia: true
+    };
+  },
+  created: function created() {
+    console.log("verse " + this.showing);
+    this.inicializa_crono();
+  },
+  mounted: function mounted() {
+    var self = this;
+    setInterval(function () {
+      self.actualiza_crono();
+    }, 1000);
+  },
+  methods: {
+    close: function close() {
+      this.$emit("close");
+    },
+    actualiza_crono: function actualiza_crono() {
+      var hora = parseInt(this.crono_horas);
+      var minutos = parseInt(this.crono_minutos);
+      var segundos = parseInt(this.crono_segundos);
+      console.log("Actualiza segundos " + segundos);
+      segundos--;
+      console.log("Actualiza segundos " + segundos);
+
+      if (segundos <= 0) {
+        minutos--;
+        segundos = 59;
+      }
+
+      if (minutos <= 0) {
+        if (hora > 0) {
+          hora--;
+          minutos = 59;
+        } else {
+          hora = 0;
+          minutos = 0;
+          segundos = 0;
+          this.ponencia = false;
+        }
+      }
+
+      this.crono_horas = hora > 10 ? String(hora) : 0 + String(hora);
+      this.crono_minutos = minutos > 10 ? String(minutos) : 0 + String(minutos);
+      this.crono_segundos = segundos > 10 ? String(segundos) : 0 + String(segundos);
+      this.crono = this.crono_horas + ":" + this.crono_minutos + ":" + this.crono_segundos; // console.log("en actualiza " + this.crono);
+    },
+    inicializa_crono: function inicializa_crono() {
+      var horaActual;
+      var minutoActual;
+      var horaComienzoPonencia;
+      var horaFinPonencia;
+      var minutoComienzoPonencia;
+      var minutoFinPonencia;
+      var comienzo;
+      var fin;
+      var actual;
+      var duracion; // console.log("En estado de ponencia");//36600
+
+      horaComienzoPonencia = parseInt(this.empresa.horario.substr(0, 2));
+      minutoComienzoPonencia = parseInt(this.empresa.horario.substr(3, 2));
+      comienzo = horaComienzoPonencia * 3600 + minutoComienzoPonencia * 60;
+      console.log("Inicializa Comienzo: " + comienzo);
+      var reloj = new Date(Date.now());
+      actual = reloj.getHours() * 3600 + reloj.getMinutes() * 60;
+      console.log("Inicializa Actual: " + actual); // actual = 12 * 3600 + 10 * 60; //12:10
+      // console.log("En obtener estado de ponencia hora " + this.hora)
+      // console.log("En obtener estado de ponencia minutos " + this.minutos)
+      //
+      // console.log("En obtener estado de ponencia, Actual " + actual);//47400 (13:10)
+
+      fin = comienzo + duracion; // console.log("En obtener estado de ponencia, Comienzo " + comienzo + " Fin " + fin);//47400 (13:10)
+      // console.log("Actual = "+actual +" Comienzo "+comienzo);
+
+      if (actual < comienzo) {
+        var dif = comienzo - actual;
+        var h = Math.floor(dif / 3600);
+        this.crono_horas = h > 10 ? String(h) : 0 + String(h);
+        var m = Math.floor(dif % 3600 / 60);
+        this.crono_minutos = m > 10 ? String(m) : 0 + String(m);
+        var s = dif % 3600 % 60;
+        this.crono_segundos = s > 10 ? String(s) : 0 + String(s);
+      } else {
+        this.crono_horas = "00";
+        this.crono_minutos = "00";
+        this.crono_segundos = "00";
+      }
+
+      console.log("Actualiza crono " + this.crono_horas + ":" + this.crono_minutos + ":" + this.crono_segundos);
+      this.crono = this.crono_horas + ":" + this.crono_minutos + ":" + this.crono_segundos;
+    } //     showing(value) {
+    //         if (value) {
+    //             return document.querySelector('body').classList.add('bg-opacity-40');
+    //         }
+    //
+    //         document.querySelector('body').classList.remove(' bg-opacity-50 overflow-hidden');
+    //     }
+    // },
+
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/ponencias.vue?vue&type=script&lang=js":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/ponencias.vue?vue&type=script&lang=js ***!
@@ -16689,12 +16821,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _modal_empresa_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal_empresa.vue */ "./resources/js/components/ponencias-main/modal_empresa.vue");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    modal_empresa: _modal_empresa_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
   props: ['src', 'empresa'],
   data: function data() {
     return {
-      empresa: JSON.parse(this.empresa),
-      hover: false,
+      empresa_actual: JSON.parse(this.empresa),
+      seleccionado: false,
       pos_x: 0,
       pos_y: 0
     };
@@ -16708,22 +16845,23 @@ __webpack_require__.r(__webpack_exports__);
     // })
   },
   methods: {
+    muestra_oculta_detalle: function muestra_oculta_detalle() {
+      this.seleccionado = this.seleccionado == true ? false : true;
+    },
     mouse_over: function mouse_over(event) {
-      this.hover = true;
-      console.log("Hola");
-      var el = this.$refs['elemento'];
-      console.log(el); //get height
+      this.seleccionado = true; // console.log("Hola");
+
+      var el = this.$refs['elemento']; // console.log(el); //get height
 
       this.pos_x = el.getBoundingClientRect().top;
       this.pos_y = el.getBoundingClientRect().left; // var x = this.$ref.getBoundingClientRect().top;
       // var y = this.$ref.getBoundingClientRect().left;
 
       var y = event.clientY; // console.log("Hola: X: " + x + "Y: " + y);
-
-      console.log(this.$ref.getBoundingClientRect().height); //get height
+      // console.log(this.$ref.getBoundingClientRect().height) //get height
     },
     mouse_leave: function mouse_leave(event) {
-      this.hover = false;
+      this.seleccionado = false;
       console.log("Adiós");
     } // allProducts(){
     //     let self = this;
@@ -16954,7 +17092,7 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   id: "informatica",
-  "class": "w-1/2 h-1/2",
+  "class": "self-end",
   src: "images/familias/si_informatica.png",
   alt: "Comercio"
 }, null, -1
@@ -16963,7 +17101,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   id: "imagen",
-  "class": "w-1/2 h-1/2 max-w-full object-fill items-end",
+  "class": " max-w-full object-fill items-end",
   src: "images/familias/ii_imagen.png",
   alt: "Imagen"
 }, null, -1
@@ -17016,7 +17154,7 @@ var _hoisted_14 = {
 
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   id: "comercio",
-  "class": "w-1/2 h-1/2 object-fill ",
+  "class": " object-fill ",
   src: "images/familias/sd_comercio.png",
   alt: "Imagen"
 }, null, -1
@@ -17025,7 +17163,7 @@ var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 
 var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   id: "jorandas",
-  "class": "w-1/2 h-1/2 object-fill",
+  "class": " object-fill",
   src: "images/familias/id_jornadas.png",
   alt: "Imagen"
 }, null, -1
@@ -17035,14 +17173,14 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.informatica,
-    "class": ["botonFamilia flex-grow", {
+    "class": ["botonFamilia flex-grow justify-end w-1/2 ", {
       active: $data.isActiveInformatica
     }]
   }, [_hoisted_3], 10
   /* CLASS, PROPS */
   , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.imagen,
-    "class": ["botonFamilia", {
+    "class": ["botonFamilia justify-end w-1/2", {
       active: $data.isActiveImagen
     }]
   }, [_hoisted_4], 10
@@ -17051,24 +17189,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onTimeupdate: _cache[1] || (_cache[1] = function () {
       return $options.onTimeUpdate && $options.onTimeUpdate.apply($options, arguments);
     }),
+    ref: "videoRef",
     id: "video",
-    "class": "h-50v",
-    autoplay: "",
+    "class": "h-70v",
+    autoplay: true,
     controls: "",
-    playsinline: "",
-    loop: ""
-  }, [_hoisted_6, _hoisted_7, _hoisted_8, _hoisted_9, _hoisted_10, _hoisted_11, _hoisted_12, _hoisted_13], 32
-  /* HYDRATE_EVENTS */
+    playsinline: ""
+  }, [_hoisted_6, _hoisted_7, _hoisted_8, _hoisted_9, _hoisted_10, _hoisted_11, _hoisted_12, _hoisted_13], 544
+  /* HYDRATE_EVENTS, NEED_PATCH */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.comercio,
-    "class": ["botonFamilia ", {
+    "class": ["botonFamilia w-1/2 ", {
       active: $data.isActiveComercio
     }]
   }, [_hoisted_15], 10
   /* CLASS, PROPS */
   , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.jornadas,
-    "class": ["botonFamilia", {
+    "class": ["botonFamilia w-1/2", {
       active: $data.isActiveJornadas
     }]
   }, [_hoisted_16], 10
@@ -17092,29 +17230,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": " bg-white mr-10 p-5 overflow-y-auto  h-70v "
+  "class": "w:1/2"
+};
+var _hoisted_2 = {
+  "class": "text-center font-mono justify-center items-center  text-xl text-white bg-enlaces  h-10v"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" LISTADO DE CHARLAS POR HORA ");
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" LISTADO DE PONENCIAS ");
 
-var _hoisted_3 = {
+var _hoisted_4 = {
   "class": "flex flex-row justify-around items-center"
 };
-var _hoisted_4 = {
+var _hoisted_5 = {
   "class": "font-mono text-monospace text-white\n            text-2xl border-2 border-green-800 rounded bg-enlaces p-1"
 };
-var _hoisted_5 = {
-  key: 0,
-  "class": "animate-ping\n                 h-5 w-10 rounded-full bg-purple-400 opacity-7 text-xs"
-};
 var _hoisted_6 = {
-  "class": "mx-5"
+  "class": "bg-white  px-5 overflow-y-auto  h-60v  "
 };
 var _hoisted_7 = {
+  key: 0,
+  "class": "animate-ping\n                 h-5 w-20 rounded-full bg-green-900 opacity-4 text-xs text-white"
+};
+var _hoisted_8 = {
+  "class": "mx-5"
+};
+var _hoisted_9 = {
   "class": "mr-5"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.hora) + ":" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.minutos) + ":" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.segundos), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.hora) + ":" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.minutos) + ":" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.segundos), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function () {
@@ -17126,28 +17270,134 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.ordena_horario && $options.ordena_horario.apply($options, arguments);
     }),
     "class": "boton2"
-  }, "Horario")]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.listado_dinamico, function (empresa) {
+  }, "Horario")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.listado_dinamico, function (empresa) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       href: empresa.enlace,
       title: "Enlace a la ponencia",
       "class": [empresa.estado_ponencia, "rounded bg-gray-200 max-w-full  flex flex-row  justify-between items-center\n            m-3 text-blue-700 font-mono   w-40v  "]
-    }, [empresa.estado_ponencia === 'transmitiendo' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", _hoisted_5, " On line")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <button class=\"animate-ping inline-block"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                 py-4 px-8 bg-blue-500 text-blue-100 w-1/6 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                 rounded-lg\" v-if=\"empresa.estado_ponencia==='finalizada'\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    On line"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ... "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Para ponencias on line, se marca "), empresa.estado_ponencia === 'transmitiendo' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", _hoisted_7, " On line ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <button class=\"animate-ping inline-block"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                 py-4 px-8 bg-blue-500 text-blue-100 w-1/6 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                 rounded-lg\" v-if=\"empresa.estado_ponencia==='finalizada'\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    On line"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ... "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
       src: '/storage/logos/' + empresa.logo,
       alt: "logo",
       "class": "p-2 mr-15 w-10v max-h-20"
     }, null, 8
     /* PROPS */
-    , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"flex flex-col justify-around text-blue-700 font-mono\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(empresa.empresa), 1
+    , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"flex flex-col justify-around text-blue-700 font-mono\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(empresa.empresa), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"flex flex-row \""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(empresa.horario), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"flex flex-row \""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(empresa.horario), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"mr-5\">{{ empresa.estado_ponencia }}</div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>")], 10
     /* CLASS, PROPS */
     , ["href"])]);
   }), 256
   /* UNKEYED_FRAGMENT */
-  ))]);
+  ))])]);
 }
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("data-v-71c4c6ee");
+
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-71c4c6ee");
+
+var _hoisted_1 = {
+  "class": "flex flex-row justify-around self-center items-center mt-3 w-75v bg-cabecera_modal"
+};
+var _hoisted_2 = {
+  "class": "text-xl-center   text-4xl  text-enlaces font-mono"
+};
+var _hoisted_3 = {
+  "class": "m-5  font-mono italic"
+};
+var _hoisted_4 = {
+  "class": "m-5"
+};
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Ponente: ");
+
+var _hoisted_6 = {
+  "class": "italic font-bold"
+};
+var _hoisted_7 = {
+  "class": "m-5"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Hora ponencia: ");
+
+var _hoisted_9 = {
+  "class": "italic font-bold"
+};
+var _hoisted_10 = {
+  key: 0,
+  "class": "ml-5 font-mono text-monospace\n                  text-2xl p-1"
+};
+var _hoisted_11 = {
+  key: 1,
+  "class": "ml-5 font-mono text-monospace\n                  text-2xl p-1"
+};
+var _hoisted_12 = {
+  "class": "ml-2 font-mono text-monospace text-white\n            text-2xl border-2 border-green-800 rounded bg-enlaces p-1"
+};
+var _hoisted_13 = {
+  "class": "botonFamilia bg-gray-600 ",
+  href: "{{ empresa.enlace }}"
+};
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Accede a la ponencia de ");
+
+var _hoisted_15 = {
+  "class": "ml-2 text-xl italic"
+};
+
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
+
+var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<template>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Datos de la empresa-"), $props.showing ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
+    key: 0,
+    "class": "fade z-50 fixed top-15 left-15  inset-0 w-9/12 h-4/6\n         bg-gradient-to-t overflow-x-auto overflow-y-auto\n         transition ease-out duration-100 bg-gray-300 flex flex-col justify-start ",
+    onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.close && $options.close.apply($options, arguments);
+    }, ["self"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+    src: '/storage/logos/' + $props.empresa.logo,
+    alt: "logo",
+    "class": "p-2 mr-15 w-10v max-h-20"
+  }, null, 8
+  /* PROPS */
+  , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"flex flex-col justify-around text-blue-700 font-mono\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.empresa), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.close && $options.close.apply($options, arguments);
+    }, ["prevent"])),
+    "class": " boton2  justify-self-end self-start"
+  }, " Cerrar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.descripcion), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.ponente), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"flex flex-row \""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.horario), 1
+  /* TEXT */
+  ), $data.ponencia ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_10, "Comienza en")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_11, "Ponencia ya comenzada o realizada ")), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.crono), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.ponente), 1
+  /* TEXT */
+  )])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  );
+});
 
 /***/ }),
 
@@ -17165,72 +17415,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "z-10 w-5v h-5v"
-};
-var _hoisted_2 = {
-  "class": "bg-white rounded-3xl p-3 w-10v h-10v auto-cols-max"
-};
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
-/* HOISTED */
-);
-
-var _hoisted_4 = {
-  key: 0,
-  "class": "cursor-default relative top left-10 divide-x divide-yellow-600 panel_empresa flex flex-row justify-between",
-  span: ""
-};
-var _hoisted_5 = {
-  "class": "flex flex-col justify-start divide-y-3 divide-green-700"
-};
-var _hoisted_6 = {
-  "class": "mx-5 text-purple-700 text- text-monospace"
-};
-var _hoisted_7 = {
-  "class": "mx-5"
-};
-var _hoisted_8 = {
-  "class": "ml-5"
+  "class": "z-10 flex flex-row justify-center items-center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_modal_empresa = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("modal_empresa");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <h1>Estoy en ponencias</h1>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-    "class": "relative bg-white p-3 rounded cursor-wait",
+    "class": "relative bg-white p-3 rounded cursor-pointer ",
     ref: "elemento",
-    onMouseover: _cache[1] || (_cache[1] = function () {
-      return $options.mouse_over && $options.mouse_over.apply($options, arguments);
-    }),
-    onMouseleave: _cache[2] || (_cache[2] = function () {
-      return $options.mouse_leave && $options.mouse_leave.apply($options, arguments);
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.muestra_oculta_detalle && $options.muestra_oculta_detalle.apply($options, arguments);
     })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.empresa.empresa), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("         @mouseleave=\"mouse_leave\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"bg-white rounded-3xl p-3 w-10v h-10v auto-cols-max\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     src: $props.src,
     alt: "",
-    "class": "max-w-5v max-h-5v"
+    "class": "max-w-5v max-h-5v w-20 h-20 rounded-lg mx-auto "
   }, null, 8
   /* PROPS */
-  , ["src"])]), _hoisted_3]), $data.hover ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-    src: '/storage/logos/' + $data.empresa.logo,
-    alt: "logo",
-    "class": " relative max-w-20 max-h-20  p-2 mr-15"
+  , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.empresa_actual.empresa), 1
+  /* TEXT */
+  )])], 512
+  /* NEED_PATCH */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_empresa, {
+    showing: $data.seleccionado,
+    empresa: $data.empresa_actual,
+    onClose: _cache[2] || (_cache[2] = function ($event) {
+      return $data.seleccionado = false;
+    })
   }, null, 8
   /* PROPS */
-  , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"flex flex-col justify-around text-blue-700 font-mono\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.empresa.empresa), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"flex flex-row \">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.empresa.duracion) + " minutos", 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, "Comienza " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.empresa.horario), 1
-  /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-    "class": "text-red-800 hover:text-blue-700",
-    href: $data.empresa.enlace
-  }, "Acceder a la charla", 8
-  /* PROPS */
-  , ["href"])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 544
-  /* HYDRATE_EVENTS, NEED_PATCH */
-  )], 2112
-  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  , ["showing", "empresa"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <div"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        class=\"cursor-default relative top left-10 divide-x divide-yellow-600 panel_empresa flex flex-row"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            justify-between\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        span v-if=\"seleccionado\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <img :src=\"'/storage/logos/'+empresa.logo\" alt=\"logo\" class=\" relative max-w-20 max-h-20  p-2 mr-15\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        &lt;!&ndash;                <div class=\"flex flex-col justify-around text-blue-700 font-mono\">&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <div class=\"flex flex-col justify-start divide-y-3 divide-green-700\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"mx-5 text-purple-700 text- text-monospace\">{{ empresa.empresa }}</div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            &lt;!&ndash;                    <div class=\"flex flex-row \">&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"mx-5\"> {{ empresa.duracion }} minutos</div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"ml-5\">Comienza {{ empresa.horario }}</div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <a class=\"text-red-800 hover:text-blue-700\" :href=\"empresa.enlace\">Acceder a la charla</a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    </div>")], 64
+  /* STABLE_FRAGMENT */
   );
 }
 
@@ -17256,6 +17471,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // import modal_empresa from './components/ponencias-main/modal_empresa.vue';
 
 
 
@@ -17269,7 +17485,7 @@ __webpack_require__.r(__webpack_exports__);
     ponencias: _components_ponencias_main_ponencias_vue__WEBPACK_IMPORTED_MODULE_1__.default,
     listadoPonencias: _components_ponencias_main_listado_ponencias_vue__WEBPACK_IMPORTED_MODULE_3__.default,
     componente: _components_componente_vue__WEBPACK_IMPORTED_MODULE_8__.default,
-    //
+    // modal_empresa,
     contenido_feria: _components_feria_main_vue__WEBPACK_IMPORTED_MODULE_2__.default // main_feria_ii,
     // main_feria_id,
     // main_feria_si,
@@ -17283,6 +17499,106 @@ __webpack_require__.r(__webpack_exports__);
     };
   }
 }).mount('#app');
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.fade-enter-active[data-v-71c4c6ee],\n.fade-leave-active[data-v-71c4c6ee] {\n    transition: all 0.4s;\n}\n.fade-enter[data-v-71c4c6ee],\n.fade-leave-to[data-v-71c4c6ee] {\n    opacity: 0;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (cssWithMappingToString) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join("");
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === "string") {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, ""]];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
 
 /***/ }),
 
@@ -17493,6 +17809,315 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_style_index_0_id_71c4c6ee_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_style_index_0_id_71c4c6ee_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_style_index_0_id_71c4c6ee_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
+
+    return memo;
+  };
+}();
+
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
+
+      memo[target] = styleTarget;
+    }
+
+    return memo[target];
+  };
+}();
+
+var stylesInDom = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDom.length; i++) {
+    if (stylesInDom[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var index = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3]
+    };
+
+    if (index !== -1) {
+      stylesInDom[index].references++;
+      stylesInDom[index].updater(obj);
+    } else {
+      stylesInDom.push({
+        identifier: identifier,
+        updater: addStyle(obj, options),
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+  var attributes = options.attributes || {};
+
+  if (typeof attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : 0;
+
+    if (nonce) {
+      attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(attributes).forEach(function (key) {
+    style.setAttribute(key, attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  } else {
+    style.removeAttribute('media');
+  }
+
+  if (sourceMap && typeof btoa !== 'undefined') {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var singleton = null;
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
+  }
+
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
+  }
+
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+
+    if (Object.prototype.toString.call(newList) !== '[object Array]') {
+      return;
+    }
+
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDom[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDom[_index].references === 0) {
+        stylesInDom[_index].updater();
+
+        stylesInDom.splice(_index, 1);
+      }
+    }
+
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/componente.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/componente.vue ***!
@@ -17675,6 +18300,36 @@ _listado_ponencias_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.defa
 
 /***/ }),
 
+/***/ "./resources/js/components/ponencias-main/modal_empresa.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/ponencias-main/modal_empresa.vue ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _modal_empresa_vue_vue_type_template_id_71c4c6ee_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true */ "./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true");
+/* harmony import */ var _modal_empresa_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal_empresa.vue?vue&type=script&lang=js */ "./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=script&lang=js");
+/* harmony import */ var _modal_empresa_vue_vue_type_style_index_0_id_71c4c6ee_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css */ "./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css");
+
+
+
+
+;
+_modal_empresa_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _modal_empresa_vue_vue_type_template_id_71c4c6ee_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render
+_modal_empresa_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__scopeId = "data-v-71c4c6ee"
+/* hot reload */
+if (false) {}
+
+_modal_empresa_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/components/ponencias-main/modal_empresa.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_modal_empresa_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
 /***/ "./resources/js/components/ponencias-main/ponencias.vue":
 /*!**************************************************************!*\
   !*** ./resources/js/components/ponencias-main/ponencias.vue ***!
@@ -17813,6 +18468,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=script&lang=js":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=script&lang=js ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modal_empresa.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/ponencias-main/ponencias.vue?vue&type=script&lang=js":
 /*!**************************************************************************************!*\
   !*** ./resources/js/components/ponencias-main/ponencias.vue?vue&type=script&lang=js ***!
@@ -17941,6 +18612,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_template_id_71c4c6ee_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_template_id_71c4c6ee_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=template&id=71c4c6ee&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/ponencias-main/ponencias.vue?vue&type=template&id=b30d5b3c":
 /*!********************************************************************************************!*\
   !*** ./resources/js/components/ponencias-main/ponencias.vue?vue&type=template&id=b30d5b3c ***!
@@ -17953,6 +18640,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ponencias_vue_vue_type_template_id_b30d5b3c__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ponencias_vue_vue_type_template_id_b30d5b3c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ponencias.vue?vue&type=template&id=b30d5b3c */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/ponencias.vue?vue&type=template&id=b30d5b3c");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css ***!
+  \**************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_empresa_vue_vue_type_style_index_0_id_71c4c6ee_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ponencias-main/modal_empresa.vue?vue&type=style&index=0&id=71c4c6ee&scoped=true&lang=css");
 
 
 /***/ }),
@@ -18168,7 +18868,7 @@ function compileToFunction(template, options) {
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
+/******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};

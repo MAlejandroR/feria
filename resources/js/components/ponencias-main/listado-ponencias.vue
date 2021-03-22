@@ -1,41 +1,49 @@
 <template>
-    <div class=" bg-white mr-10 p-5 overflow-y-auto  h-70v ">
-        LISTADO DE CHARLAS POR HORA
-        <div class="flex flex-row justify-around items-center">
-            <div class="font-mono text-monospace text-white
+
+<div class="w:1/2">
+        <div class="text-center font-mono justify-center items-center  text-xl text-white bg-enlaces  h-10v">
+            LISTADO DE PONENCIAS
+            <div class="flex flex-row justify-around items-center">
+                <div class="font-mono text-monospace text-white
             text-2xl border-2 border-green-800 rounded bg-enlaces p-1">
-                {{ hora }}:{{ minutos }}:{{ segundos }}
+                    {{ hora }}:{{ minutos }}:{{ segundos }}
+                </div>
+                <button @click="ordena_nombre" class="boton2">Nombre</button>
+                <button @click="ordena_horario" class="boton2">Horario</button>
             </div>
-            <button @click="ordena_nombre" class="boton2">Nombre</button>
-            <button @click="ordena_horario" class="boton2">Horario</button>
         </div>
-        
-        <div v-for="empresa in listado_dinamico">
-            <a :href="empresa.enlace" title="Enlace a la ponencia"  :class="empresa.estado_ponencia" class="rounded bg-gray-200 max-w-full  flex flex-row  justify-between items-center
+      <div class="bg-white  px-5 overflow-y-auto  h-60v  ">
+            <div v-for="empresa in listado_dinamico">
+                <a :href="empresa.enlace" title="Enlace a la ponencia" :class="empresa.estado_ponencia"
+                   class="rounded bg-gray-200 max-w-full  flex flex-row  justify-between items-center
             m-3 text-blue-700 font-mono   w-40v  ">
-                <button class="animate-ping
-                 h-5 w-10 rounded-full bg-purple-400 opacity-7 text-xs" v-if="empresa.estado_ponencia==='transmitiendo'">
-                    On line</button>
+                    <!-- Para ponencias on line, se marca -->
+                    <button class="animate-ping
+                 h-5 w-20 rounded-full bg-green-900 opacity-4 text-xs text-white"
+                            v-if="empresa.estado_ponencia==='transmitiendo'">
+                        On line
+                    </button>
 
-                <!--                <button class="animate-ping inline-block-->
-                <!--                 py-4 px-8 bg-blue-500 text-blue-100 w-1/6 -->
-                <!--                 rounded-lg" v-if="empresa.estado_ponencia==='finalizada'">-->
-                <!--                    On line-->
-                <!--                </button>-->
-                <!-- ... -->
+                    <!--                <button class="animate-ping inline-block-->
+                    <!--                 py-4 px-8 bg-blue-500 text-blue-100 w-1/6 -->
+                    <!--                 rounded-lg" v-if="empresa.estado_ponencia==='finalizada'">-->
+                    <!--                    On line-->
+                    <!--                </button>-->
+                    <!-- ... -->
 
-                <img :src="'/storage/logos/'+empresa.logo" alt="logo" class="p-2 mr-15 w-10v max-h-20">
-                <!--                <div class="flex flex-col justify-around text-blue-700 font-mono">-->
+                    <img :src="'/storage/logos/'+empresa.logo" alt="logo" class="p-2 mr-15 w-10v max-h-20">
+                    <!--                <div class="flex flex-col justify-around text-blue-700 font-mono">-->
 
-                <div class="mx-5"> {{ empresa.empresa }} </div>
-                <!--                    <div class="flex flex-row "-->
-                <div class="mr-5">{{ empresa.horario }}</div>
-                <!--                <div class="mr-5">{{ empresa.estado_ponencia }}</div>-->
-                <!--                    </div>-->
-            </a>
+                    <div class="mx-5"> {{ empresa.empresa }}</div>
+                    <!--                    <div class="flex flex-row "-->
+                    <div class="mr-5">{{ empresa.horario }}</div>
+                    <!--                <div class="mr-5">{{ empresa.estado_ponencia }}</div>-->
+                    <!--                    </div>-->
+                </a>
 
+            </div>
         </div>
-    </div>
+</div>
 </template>
 
 
@@ -59,7 +67,6 @@ export default {
         this.actualiza_hora();
         this.add_property_empresa();
 
-        // this.allProducts();
     },
     mounted() {
         var self = this;
@@ -92,27 +99,30 @@ export default {
             var fin
             var actual
             var duracion
-
+            // console.log("En estado de ponencia");//36600
             horaComienzoPonencia = parseInt(horario.substr(0, 2));
             minutoComienzoPonencia = parseInt(horario.substr(3, 2));
 
             comienzo = horaComienzoPonencia * 3600 + minutoComienzoPonencia * 60;
             actual = this.hora * 3600 + this.minutos * 60;
+            // console.log("En obtener estado de ponencia hora " + this.hora)
+            // console.log("En obtener estado de ponencia minutos " + this.minutos)
+            //
+            // console.log("En obtener estado de ponencia, Actual " + actual);//47400 (13:10)
             duracion = parseInt(duracion) * 60;
             fin = comienzo + duracion;
+            // console.log("En obtener estado de ponencia, Comienzo " + comienzo + " Fin " + fin);//47400 (13:10)
             if (actual < comienzo)
                 return "pendiente";
             if (actual >= comienzo) {
-                console.log("Actual + duracion  "+actual+" Duracon"+duracion+" Comienzo : "+comienzo);
-                let tmp = actual+duracion;
-                if (tmp < fin) {
-                    let msj="Actual:"+ this.hora+":"+this.minutos+"- Comienzo,duracion: "+horaComienzoPonencia+"-"+duracion+"-Actual, comienzo y fin: "+actual+"-"+comienzo+"-"+fin ;
-                    console.log("Transmitiendo "+msj);
+                // console.log("Actual + duracion  " + actual + " Duracon" + duracion + " Comienzo : " + comienzo);
+                let tmp = actual + duracion;
+                if (actual < fin) {
+                    let msj = "Actual:" + this.hora + ":" + this.minutos + "- Comienzo,duracion: " + horaComienzoPonencia + "-" + duracion + "-Actual, comienzo y fin: " + actual + "-" + comienzo + "-" + fin;
+                    // console.log("Transmitiendo " + msj);
                     return "transmitiendo";
 
-                }
-
-                else
+                } else
                     // return "finalizada"+this.hora+":"+this.minutos+"-"+horaComienzoPonencia+"-"+duracion+"-"+actual+"-"+comienzo+"-"+fin ;
                     return "finalizada";
             }
@@ -126,7 +136,7 @@ export default {
         },
         estado_ponencia: function () {
 
-            // console.log("Valor de estado:1 "+ self.listado_dinamico[0].empresa);
+            // console.log("En estado ponencia 1 ");
             var self = this;
 
             this.listado_dinamico.forEach(
@@ -136,12 +146,11 @@ export default {
                     var estado;
                     var hora_ponencia = empresa.horario.substr(0, 2);
                     var minutos_ponencia = empresa.horario.substr(3, 2);
-                    ;
-                    console.log("hora ponencias " + hora_ponencia);
-                    console.log("minutos  " + minutos_ponencia);
+                    // console.log("hora ponencias " + hora_ponencia);
+                    // console.log("minutos  " + minutos_ponencia);
+                    // console.log("En estado ponencia");
                     estado = this.obtener_estado_ponencia(empresa.horario, empresa.duracion);
-
-                    console.log("Valor de estado: -" + estado + "-");
+                    // console.log("Valor de estado: -" + estado + "-");
                     empresa.estado_ponencia = estado;
 
                     // console.log("Valor de estado: 2");
@@ -150,14 +159,14 @@ export default {
         },
         actualiza_hora: function () {
             var reloj = new Date(Date.now());
-            // this.hora = reloj.getHours();
-            // this.minutos = reloj.getMinutes();
+            this.hora = reloj.getHours();
+            this.minutos = reloj.getMinutes();
             this.segundos = reloj.getSeconds();
-            // this.horas = this.horas > 9? this.horas: "0"+this.horas;
-            // this.minutos = this.minutos > 9? this.minutos: "0"+this.minutos;
+            this.horas = this.horas > 9? this.horas: "0"+this.horas;
+            this.minutos = this.minutos > 9? this.minutos: "0"+this.minutos;
             this.segundos = this.segundos > 9 ? this.segundos : "0" + this.segundos;
-            this.hora = 13;
-            this.minutos = 10;
+            // this.hora = 11;
+            // this.minutos = 50;
 
 
         },

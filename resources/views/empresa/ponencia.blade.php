@@ -31,7 +31,7 @@
     <!--Mostrar logos-->
         {{--        <div class="grid grid-cols-{{$columnas+$filas}} gap-4  grid-flow-cols w-2/3 m-5 auto-rows-max">--}}
         <div class="flex flex-row w-screen m-5">
-            <div class="w-1/3">
+            <div class="w-1/3  rounded-lg">
                 <listado-ponencias filas='{{$filas+1}}' empresas='@json($empresas)'></listado-ponencias>
                 {{--            <div class="row-span-{{$filas}} col-span-3 bg-white mr-10 p-5">
                                 LISTADO DE CHARLAS POR HORA
@@ -41,7 +41,7 @@
                 {{--            id="{{$empresa->id}}">--}}
             </div>
             <div class="w-60v">
-                <div class="grid grid-cols-{{$columnas}} gap-4  grid-flow-cols  m-5 auto-rows-max">
+                <div class="grid grid-cols-{{$columnas}} gap-4  grid-flow-cols  m-5 auto-rows-max overflow-y-auto h-65v">
                     @foreach($empresas as $empresa)
                         <ponencias src="{{asset("storage/logos/$empresa->logo")}}"
                                    empresa="{{(json_encode($empresa))}}"></ponencias>

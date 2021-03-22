@@ -2809,6 +2809,11 @@ select {
   background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
 }
 
+.bg-cabecera_modal {
+  --tw-bg-opacity: 1;
+  background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent {
   background-color: transparent;
 }
@@ -3283,6 +3288,11 @@ select {
 .group:hover .group-hover\:bg-fondo2 {
   --tw-bg-opacity: 1;
   background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-cabecera_modal {
+  --tw-bg-opacity: 1;
+  background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within {
@@ -3761,6 +3771,11 @@ select {
   background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-cabecera_modal:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -4237,6 +4252,11 @@ select {
   background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
 }
 
+.hover\:bg-cabecera_modal:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -4711,6 +4731,11 @@ select {
 .focus\:bg-fondo2:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+}
+
+.focus\:bg-cabecera_modal:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
 }
 
 .bg-none {
@@ -19884,6 +19909,13 @@ select {
   left: 3.5rem;
 }
 
+.inset-15 {
+  top: 15%;
+  right: 15%;
+  bottom: 15%;
+  left: 15%;
+}
+
 .inset-16 {
   top: 4rem;
   right: 4rem;
@@ -20381,6 +20413,13 @@ select {
   left: -100%;
 }
 
+.inset-1\/5 {
+  top: 20%;
+  right: 20%;
+  bottom: 20%;
+  left: 20%;
+}
+
 .inset-y-0 {
   top: 0px;
   bottom: 0px;
@@ -20519,6 +20558,16 @@ select {
 .inset-x-14 {
   right: 3.5rem;
   left: 3.5rem;
+}
+
+.inset-y-15 {
+  top: 15%;
+  bottom: 15%;
+}
+
+.inset-x-15 {
+  right: 15%;
+  left: 15%;
 }
 
 .inset-y-16 {
@@ -21231,6 +21280,16 @@ select {
   left: -100%;
 }
 
+.inset-y-1\/5 {
+  top: 20%;
+  bottom: 20%;
+}
+
+.inset-x-1\/5 {
+  right: 20%;
+  left: 20%;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -21453,6 +21512,22 @@ select {
 
 .left-14 {
   left: 3.5rem;
+}
+
+.top-15 {
+  top: 15%;
+}
+
+.right-15 {
+  right: 15%;
+}
+
+.bottom-15 {
+  bottom: 15%;
+}
+
+.left-15 {
+  left: 15%;
 }
 
 .top-16 {
@@ -22589,6 +22664,22 @@ select {
 
 .-left-full {
   left: -100%;
+}
+
+.top-1\/5 {
+  top: 20%;
+}
+
+.right-1\/5 {
+  right: 20%;
+}
+
+.bottom-1\/5 {
+  bottom: 20%;
+}
+
+.left-1\/5 {
+  left: 20%;
 }
 
 .resize-none {
@@ -28797,6 +28888,10 @@ select {
   width: 40vw;
 }
 
+.w-49v {
+  width: 49vw;
+}
+
 .w-50v {
   width: 50vw;
 }
@@ -28807,6 +28902,10 @@ select {
 
 .w-70v {
   width: 70vw;
+}
+
+.w-75v {
+  width: 75vw;
 }
 
 .w-80v {
@@ -32903,7 +33002,7 @@ select {
           animation: bounce 1s infinite;
 }
 
-.ppal{
+.ppal {
   background-image: url('/images/background/fondo_feria.png');
   background-size: contain;
   display: flex;
@@ -32915,7 +33014,7 @@ select {
   margin-right: 2.5rem;
 }
 
-.panel_empresa{
+.panel_empresa {
   --tw-bg-opacity: 1;
   background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
   --tw-border-opacity: 1;
@@ -32932,7 +33031,7 @@ select {
   transition-duration: 500ms;
 }
 
-.boton1{
+.boton1 {
   --tw-bg-opacity: 1;
   background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
 }
@@ -33121,7 +33220,7 @@ select {
   transition-duration: 150ms;
 }
 
-.active{
+.active {
   --tw-bg-opacity: 1;
   background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
   --tw-bg-opacity: 1;
@@ -33157,7 +33256,7 @@ select {
 
 /*active:bg-gray-900*/
 
-.pediente{
+.pediente {
   --tw-bg-opacity: 1;
   background-color: rgba(167, 139, 250, var(--tw-bg-opacity));
   border-radius: 9999px;
@@ -33170,7 +33269,7 @@ select {
           animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-.transmitiendose{
+.transmitiendose {
   height: 1.25rem;
   margin-right: 0.75rem;
   width: 1.25rem;
@@ -33178,9 +33277,10 @@ select {
           animation: spin 1s linear infinite;
 }
 
-.finalizada{
+.finalizada {
   --tw-bg-opacity: 1;
   background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 @media (min-width: 640px) {
@@ -35245,6 +35345,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -35719,6 +35824,11 @@ select {
   .group:hover .sm\:group-hover\:bg-fondo2 {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within {
@@ -36197,6 +36307,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-cabecera_modal:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -36673,6 +36788,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .sm\:hover\:bg-cabecera_modal:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -37147,6 +37267,11 @@ select {
   .sm\:focus\:bg-fondo2:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-cabecera_modal:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .sm\:bg-none {
@@ -52320,6 +52445,13 @@ select {
     left: 3.5rem;
   }
 
+  .sm\:inset-15 {
+    top: 15%;
+    right: 15%;
+    bottom: 15%;
+    left: 15%;
+  }
+
   .sm\:inset-16 {
     top: 4rem;
     right: 4rem;
@@ -52817,6 +52949,13 @@ select {
     left: -100%;
   }
 
+  .sm\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .sm\:inset-y-0 {
     top: 0px;
     bottom: 0px;
@@ -52955,6 +53094,16 @@ select {
   .sm\:inset-x-14 {
     right: 3.5rem;
     left: 3.5rem;
+  }
+
+  .sm\:inset-y-15 {
+    top: 15%;
+    bottom: 15%;
+  }
+
+  .sm\:inset-x-15 {
+    right: 15%;
+    left: 15%;
   }
 
   .sm\:inset-y-16 {
@@ -53667,6 +53816,16 @@ select {
     left: -100%;
   }
 
+  .sm\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .sm\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
+  }
+
   .sm\:top-0 {
     top: 0px;
   }
@@ -53889,6 +54048,22 @@ select {
 
   .sm\:left-14 {
     left: 3.5rem;
+  }
+
+  .sm\:top-15 {
+    top: 15%;
+  }
+
+  .sm\:right-15 {
+    right: 15%;
+  }
+
+  .sm\:bottom-15 {
+    bottom: 15%;
+  }
+
+  .sm\:left-15 {
+    left: 15%;
   }
 
   .sm\:top-16 {
@@ -55025,6 +55200,22 @@ select {
 
   .sm\:-left-full {
     left: -100%;
+  }
+
+  .sm\:top-1\/5 {
+    top: 20%;
+  }
+
+  .sm\:right-1\/5 {
+    right: 20%;
+  }
+
+  .sm\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .sm\:left-1\/5 {
+    left: 20%;
   }
 
   .sm\:resize-none {
@@ -61220,6 +61411,10 @@ select {
     width: 40vw;
   }
 
+  .sm\:w-49v {
+    width: 49vw;
+  }
+
   .sm\:w-50v {
     width: 50vw;
   }
@@ -61230,6 +61425,10 @@ select {
 
   .sm\:w-70v {
     width: 70vw;
+  }
+
+  .sm\:w-75v {
+    width: 75vw;
   }
 
   .sm\:w-80v {
@@ -67323,6 +67522,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .md\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -67797,6 +68001,11 @@ select {
   .group:hover .md\:group-hover\:bg-fondo2 {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within {
@@ -68275,6 +68484,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-cabecera_modal:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -68751,6 +68965,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .md\:hover\:bg-cabecera_modal:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -69225,6 +69444,11 @@ select {
   .md\:focus\:bg-fondo2:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-cabecera_modal:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .md\:bg-none {
@@ -84398,6 +84622,13 @@ select {
     left: 3.5rem;
   }
 
+  .md\:inset-15 {
+    top: 15%;
+    right: 15%;
+    bottom: 15%;
+    left: 15%;
+  }
+
   .md\:inset-16 {
     top: 4rem;
     right: 4rem;
@@ -84895,6 +85126,13 @@ select {
     left: -100%;
   }
 
+  .md\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .md\:inset-y-0 {
     top: 0px;
     bottom: 0px;
@@ -85033,6 +85271,16 @@ select {
   .md\:inset-x-14 {
     right: 3.5rem;
     left: 3.5rem;
+  }
+
+  .md\:inset-y-15 {
+    top: 15%;
+    bottom: 15%;
+  }
+
+  .md\:inset-x-15 {
+    right: 15%;
+    left: 15%;
   }
 
   .md\:inset-y-16 {
@@ -85745,6 +85993,16 @@ select {
     left: -100%;
   }
 
+  .md\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .md\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
+  }
+
   .md\:top-0 {
     top: 0px;
   }
@@ -85967,6 +86225,22 @@ select {
 
   .md\:left-14 {
     left: 3.5rem;
+  }
+
+  .md\:top-15 {
+    top: 15%;
+  }
+
+  .md\:right-15 {
+    right: 15%;
+  }
+
+  .md\:bottom-15 {
+    bottom: 15%;
+  }
+
+  .md\:left-15 {
+    left: 15%;
   }
 
   .md\:top-16 {
@@ -87103,6 +87377,22 @@ select {
 
   .md\:-left-full {
     left: -100%;
+  }
+
+  .md\:top-1\/5 {
+    top: 20%;
+  }
+
+  .md\:right-1\/5 {
+    right: 20%;
+  }
+
+  .md\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .md\:left-1\/5 {
+    left: 20%;
   }
 
   .md\:resize-none {
@@ -93298,6 +93588,10 @@ select {
     width: 40vw;
   }
 
+  .md\:w-49v {
+    width: 49vw;
+  }
+
   .md\:w-50v {
     width: 50vw;
   }
@@ -93308,6 +93602,10 @@ select {
 
   .md\:w-70v {
     width: 70vw;
+  }
+
+  .md\:w-75v {
+    width: 75vw;
   }
 
   .md\:w-80v {
@@ -99401,6 +99699,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -99875,6 +100178,11 @@ select {
   .group:hover .lg\:group-hover\:bg-fondo2 {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within {
@@ -100353,6 +100661,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-cabecera_modal:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -100829,6 +101142,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-cabecera_modal:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -101303,6 +101621,11 @@ select {
   .lg\:focus\:bg-fondo2:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-cabecera_modal:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .lg\:bg-none {
@@ -116476,6 +116799,13 @@ select {
     left: 3.5rem;
   }
 
+  .lg\:inset-15 {
+    top: 15%;
+    right: 15%;
+    bottom: 15%;
+    left: 15%;
+  }
+
   .lg\:inset-16 {
     top: 4rem;
     right: 4rem;
@@ -116973,6 +117303,13 @@ select {
     left: -100%;
   }
 
+  .lg\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .lg\:inset-y-0 {
     top: 0px;
     bottom: 0px;
@@ -117111,6 +117448,16 @@ select {
   .lg\:inset-x-14 {
     right: 3.5rem;
     left: 3.5rem;
+  }
+
+  .lg\:inset-y-15 {
+    top: 15%;
+    bottom: 15%;
+  }
+
+  .lg\:inset-x-15 {
+    right: 15%;
+    left: 15%;
   }
 
   .lg\:inset-y-16 {
@@ -117823,6 +118170,16 @@ select {
     left: -100%;
   }
 
+  .lg\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .lg\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
+  }
+
   .lg\:top-0 {
     top: 0px;
   }
@@ -118045,6 +118402,22 @@ select {
 
   .lg\:left-14 {
     left: 3.5rem;
+  }
+
+  .lg\:top-15 {
+    top: 15%;
+  }
+
+  .lg\:right-15 {
+    right: 15%;
+  }
+
+  .lg\:bottom-15 {
+    bottom: 15%;
+  }
+
+  .lg\:left-15 {
+    left: 15%;
   }
 
   .lg\:top-16 {
@@ -119181,6 +119554,22 @@ select {
 
   .lg\:-left-full {
     left: -100%;
+  }
+
+  .lg\:top-1\/5 {
+    top: 20%;
+  }
+
+  .lg\:right-1\/5 {
+    right: 20%;
+  }
+
+  .lg\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .lg\:left-1\/5 {
+    left: 20%;
   }
 
   .lg\:resize-none {
@@ -125376,6 +125765,10 @@ select {
     width: 40vw;
   }
 
+  .lg\:w-49v {
+    width: 49vw;
+  }
+
   .lg\:w-50v {
     width: 50vw;
   }
@@ -125386,6 +125779,10 @@ select {
 
   .lg\:w-70v {
     width: 70vw;
+  }
+
+  .lg\:w-75v {
+    width: 75vw;
   }
 
   .lg\:w-80v {
@@ -131479,6 +131876,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -131953,6 +132355,11 @@ select {
   .group:hover .xl\:group-hover\:bg-fondo2 {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within {
@@ -132431,6 +132838,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-cabecera_modal:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -132907,6 +133319,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .xl\:hover\:bg-cabecera_modal:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -133381,6 +133798,11 @@ select {
   .xl\:focus\:bg-fondo2:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-cabecera_modal:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .xl\:bg-none {
@@ -148554,6 +148976,13 @@ select {
     left: 3.5rem;
   }
 
+  .xl\:inset-15 {
+    top: 15%;
+    right: 15%;
+    bottom: 15%;
+    left: 15%;
+  }
+
   .xl\:inset-16 {
     top: 4rem;
     right: 4rem;
@@ -149051,6 +149480,13 @@ select {
     left: -100%;
   }
 
+  .xl\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .xl\:inset-y-0 {
     top: 0px;
     bottom: 0px;
@@ -149189,6 +149625,16 @@ select {
   .xl\:inset-x-14 {
     right: 3.5rem;
     left: 3.5rem;
+  }
+
+  .xl\:inset-y-15 {
+    top: 15%;
+    bottom: 15%;
+  }
+
+  .xl\:inset-x-15 {
+    right: 15%;
+    left: 15%;
   }
 
   .xl\:inset-y-16 {
@@ -149901,6 +150347,16 @@ select {
     left: -100%;
   }
 
+  .xl\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .xl\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
+  }
+
   .xl\:top-0 {
     top: 0px;
   }
@@ -150123,6 +150579,22 @@ select {
 
   .xl\:left-14 {
     left: 3.5rem;
+  }
+
+  .xl\:top-15 {
+    top: 15%;
+  }
+
+  .xl\:right-15 {
+    right: 15%;
+  }
+
+  .xl\:bottom-15 {
+    bottom: 15%;
+  }
+
+  .xl\:left-15 {
+    left: 15%;
   }
 
   .xl\:top-16 {
@@ -151259,6 +151731,22 @@ select {
 
   .xl\:-left-full {
     left: -100%;
+  }
+
+  .xl\:top-1\/5 {
+    top: 20%;
+  }
+
+  .xl\:right-1\/5 {
+    right: 20%;
+  }
+
+  .xl\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .xl\:left-1\/5 {
+    left: 20%;
   }
 
   .xl\:resize-none {
@@ -157454,6 +157942,10 @@ select {
     width: 40vw;
   }
 
+  .xl\:w-49v {
+    width: 49vw;
+  }
+
   .xl\:w-50v {
     width: 50vw;
   }
@@ -157464,6 +157956,10 @@ select {
 
   .xl\:w-70v {
     width: 70vw;
+  }
+
+  .xl\:w-75v {
+    width: 75vw;
   }
 
   .xl\:w-80v {
@@ -163557,6 +164053,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -164031,6 +164532,11 @@ select {
   .group:hover .\32xl\:group-hover\:bg-fondo2 {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-cabecera_modal {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within {
@@ -164509,6 +165015,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-cabecera_modal:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -164985,6 +165496,11 @@ select {
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
   }
 
+  .\32xl\:hover\:bg-cabecera_modal:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -165459,6 +165975,11 @@ select {
   .\32xl\:focus\:bg-fondo2:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-cabecera_modal:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(163, 179, 207, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-none {
@@ -180632,6 +181153,13 @@ select {
     left: 3.5rem;
   }
 
+  .\32xl\:inset-15 {
+    top: 15%;
+    right: 15%;
+    bottom: 15%;
+    left: 15%;
+  }
+
   .\32xl\:inset-16 {
     top: 4rem;
     right: 4rem;
@@ -181129,6 +181657,13 @@ select {
     left: -100%;
   }
 
+  .\32xl\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .\32xl\:inset-y-0 {
     top: 0px;
     bottom: 0px;
@@ -181267,6 +181802,16 @@ select {
   .\32xl\:inset-x-14 {
     right: 3.5rem;
     left: 3.5rem;
+  }
+
+  .\32xl\:inset-y-15 {
+    top: 15%;
+    bottom: 15%;
+  }
+
+  .\32xl\:inset-x-15 {
+    right: 15%;
+    left: 15%;
   }
 
   .\32xl\:inset-y-16 {
@@ -181979,6 +182524,16 @@ select {
     left: -100%;
   }
 
+  .\32xl\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .\32xl\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
+  }
+
   .\32xl\:top-0 {
     top: 0px;
   }
@@ -182201,6 +182756,22 @@ select {
 
   .\32xl\:left-14 {
     left: 3.5rem;
+  }
+
+  .\32xl\:top-15 {
+    top: 15%;
+  }
+
+  .\32xl\:right-15 {
+    right: 15%;
+  }
+
+  .\32xl\:bottom-15 {
+    bottom: 15%;
+  }
+
+  .\32xl\:left-15 {
+    left: 15%;
   }
 
   .\32xl\:top-16 {
@@ -183337,6 +183908,22 @@ select {
 
   .\32xl\:-left-full {
     left: -100%;
+  }
+
+  .\32xl\:top-1\/5 {
+    top: 20%;
+  }
+
+  .\32xl\:right-1\/5 {
+    right: 20%;
+  }
+
+  .\32xl\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .\32xl\:left-1\/5 {
+    left: 20%;
   }
 
   .\32xl\:resize-none {
@@ -189532,6 +190119,10 @@ select {
     width: 40vw;
   }
 
+  .\32xl\:w-49v {
+    width: 49vw;
+  }
+
   .\32xl\:w-50v {
     width: 50vw;
   }
@@ -189542,6 +190133,10 @@ select {
 
   .\32xl\:w-70v {
     width: 70vw;
+  }
+
+  .\32xl\:w-75v {
+    width: 75vw;
   }
 
   .\32xl\:w-80v {

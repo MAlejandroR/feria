@@ -2794,6 +2794,16 @@ select {
   background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
 }
 
+.bg-fondo_new1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+}
+
+.bg-fondo_new {
+  --tw-bg-opacity: 1;
+  background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+}
+
 .bg-fondo1 {
   --tw-bg-opacity: 1;
   background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -3273,6 +3283,16 @@ select {
 .group:hover .group-hover\:bg-fondo {
   --tw-bg-opacity: 1;
   background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-fondo_new1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-fondo_new {
+  --tw-bg-opacity: 1;
+  background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
 }
 
 .group:hover .group-hover\:bg-fondo1 {
@@ -3756,6 +3776,16 @@ select {
   background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-fondo_new1:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+}
+
+.focus-within\:bg-fondo_new:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+}
+
 .focus-within\:bg-fondo1:focus-within {
   --tw-bg-opacity: 1;
   background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -4235,6 +4265,16 @@ select {
 .hover\:bg-fondo:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+}
+
+.hover\:bg-fondo_new1:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+}
+
+.hover\:bg-fondo_new:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
 }
 
 .hover\:bg-fondo1:hover {
@@ -4718,6 +4758,16 @@ select {
   background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
 }
 
+.focus\:bg-fondo_new1:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+}
+
+.focus\:bg-fondo_new:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+}
+
 .focus\:bg-fondo1:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -4780,6 +4830,10 @@ select {
 
 .bg-fondo_feria {
   background-image: url('/images/background/fondo_feria.png');
+}
+
+.bg-fondo_vicentin {
+  background-image: url('/images/background/fondo_vicentin.png');
 }
 
 .from-transparent {
@@ -33003,8 +33057,6 @@ select {
 }
 
 .ppal {
-  background-image: url('/images/background/fondo_feria.png');
-  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33113,9 +33165,8 @@ select {
   border-radius: 0.25rem;
   border-width: 1px;
   font-weight: 600;
-  margin: 0.25rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
   --tw-text-opacity: 1;
@@ -33220,13 +33271,16 @@ select {
   transition-duration: 150ms;
 }
 
+/*.active {*/
+
+/*    @apply  visible  transform    translate-x-4    translate-y-4 bg-purple-300 z-50*/
+
+/*    transition duration-500 bg-blue-600 bg-red-600 transform -translate-y-1 scale-110;*/
+
+/*}*/
+
 .active {
-  --tw-bg-opacity: 1;
-  background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgba(196, 181, 253, var(--tw-bg-opacity));
+  visibility: visible;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -33235,23 +33289,11 @@ select {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  --tw-translate-x: 1rem;
-  --tw-translate-y: 1rem;
-  --tw-translate-y: -0.25rem;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 500ms;
+  --tw-scale-x: 1.5;
+  --tw-scale-y: 1.5;
+  --tw-skew-y: 12deg;
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /*active:bg-gray-900*/
@@ -35330,6 +35372,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .sm\:bg-fondo1 {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -35809,6 +35861,16 @@ select {
   .group:hover .sm\:group-hover\:bg-fondo {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .group:hover .sm\:group-hover\:bg-fondo1 {
@@ -36292,6 +36354,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-fondo_new1:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus-within\:bg-fondo_new:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .sm\:focus-within\:bg-fondo1:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -36771,6 +36843,16 @@ select {
   .sm\:hover\:bg-fondo:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .sm\:hover\:bg-fondo_new1:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .sm\:hover\:bg-fondo_new:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .sm\:hover\:bg-fondo1:hover {
@@ -37254,6 +37336,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .sm\:focus\:bg-fondo_new1:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-fondo_new:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-fondo1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -37316,6 +37408,10 @@ select {
 
   .sm\:bg-fondo_feria {
     background-image: url('/images/background/fondo_feria.png');
+  }
+
+  .sm\:bg-fondo_vicentin {
+    background-image: url('/images/background/fondo_vicentin.png');
   }
 
   .sm\:from-transparent {
@@ -67507,6 +67603,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .md\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .md\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .md\:bg-fondo1 {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -67986,6 +68092,16 @@ select {
   .group:hover .md\:group-hover\:bg-fondo {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .group:hover .md\:group-hover\:bg-fondo1 {
@@ -68469,6 +68585,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-fondo_new1:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .md\:focus-within\:bg-fondo_new:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .md\:focus-within\:bg-fondo1:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -68948,6 +69074,16 @@ select {
   .md\:hover\:bg-fondo:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .md\:hover\:bg-fondo_new1:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .md\:hover\:bg-fondo_new:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .md\:hover\:bg-fondo1:hover {
@@ -69431,6 +69567,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .md\:focus\:bg-fondo_new1:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-fondo_new:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-fondo1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -69493,6 +69639,10 @@ select {
 
   .md\:bg-fondo_feria {
     background-image: url('/images/background/fondo_feria.png');
+  }
+
+  .md\:bg-fondo_vicentin {
+    background-image: url('/images/background/fondo_vicentin.png');
   }
 
   .md\:from-transparent {
@@ -99684,6 +99834,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .lg\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .lg\:bg-fondo1 {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -100163,6 +100323,16 @@ select {
   .group:hover .lg\:group-hover\:bg-fondo {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .group:hover .lg\:group-hover\:bg-fondo1 {
@@ -100646,6 +100816,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-fondo_new1:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus-within\:bg-fondo_new:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .lg\:focus-within\:bg-fondo1:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -101125,6 +101305,16 @@ select {
   .lg\:hover\:bg-fondo:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-fondo_new1:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-fondo_new:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .lg\:hover\:bg-fondo1:hover {
@@ -101608,6 +101798,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .lg\:focus\:bg-fondo_new1:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-fondo_new:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-fondo1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -101670,6 +101870,10 @@ select {
 
   .lg\:bg-fondo_feria {
     background-image: url('/images/background/fondo_feria.png');
+  }
+
+  .lg\:bg-fondo_vicentin {
+    background-image: url('/images/background/fondo_vicentin.png');
   }
 
   .lg\:from-transparent {
@@ -131861,6 +132065,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .xl\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .xl\:bg-fondo1 {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -132340,6 +132554,16 @@ select {
   .group:hover .xl\:group-hover\:bg-fondo {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .group:hover .xl\:group-hover\:bg-fondo1 {
@@ -132823,6 +133047,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-fondo_new1:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus-within\:bg-fondo_new:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .xl\:focus-within\:bg-fondo1:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -133302,6 +133536,16 @@ select {
   .xl\:hover\:bg-fondo:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .xl\:hover\:bg-fondo_new1:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .xl\:hover\:bg-fondo_new:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .xl\:hover\:bg-fondo1:hover {
@@ -133785,6 +134029,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .xl\:focus\:bg-fondo_new1:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-fondo_new:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-fondo1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -133847,6 +134101,10 @@ select {
 
   .xl\:bg-fondo_feria {
     background-image: url('/images/background/fondo_feria.png');
+  }
+
+  .xl\:bg-fondo_vicentin {
+    background-image: url('/images/background/fondo_vicentin.png');
   }
 
   .xl\:from-transparent {
@@ -164038,6 +164296,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .\32xl\:bg-fondo1 {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -164517,6 +164785,16 @@ select {
   .group:hover .\32xl\:group-hover\:bg-fondo {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-fondo_new1 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-fondo_new {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .group:hover .\32xl\:group-hover\:bg-fondo1 {
@@ -165000,6 +165278,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-fondo_new1:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus-within\:bg-fondo_new:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus-within\:bg-fondo1:focus-within {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -165479,6 +165767,16 @@ select {
   .\32xl\:hover\:bg-fondo:hover {
     --tw-bg-opacity: 1;
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:hover\:bg-fondo_new1:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:hover\:bg-fondo_new:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
   }
 
   .\32xl\:hover\:bg-fondo1:hover {
@@ -165962,6 +166260,16 @@ select {
     background-color: rgba(68, 67, 68, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus\:bg-fondo_new1:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(196, 194, 196, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-fondo_new:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(200, 198, 200, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-fondo1:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(159, 158, 159, var(--tw-bg-opacity));
@@ -166024,6 +166332,10 @@ select {
 
   .\32xl\:bg-fondo_feria {
     background-image: url('/images/background/fondo_feria.png');
+  }
+
+  .\32xl\:bg-fondo_vicentin {
+    background-image: url('/images/background/fondo_vicentin.png');
   }
 
   .\32xl\:from-transparent {

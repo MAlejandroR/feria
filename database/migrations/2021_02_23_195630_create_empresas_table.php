@@ -23,6 +23,8 @@ class CreateEmpresasTable extends Migration
             $table->string("duracion");
             $table->string("enlace");
             $table->string("logo");
+            $table->string("email");
+            $table->string("persona_contacto");
         });
     }
 

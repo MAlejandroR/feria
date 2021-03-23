@@ -16389,6 +16389,56 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crud/ciclosfamilias.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crud/ciclosfamilias.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    'ciclos': {
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      familia: {},
+      nombre_ciclos: {},
+      url: "",
+      ciclos_selected: [] // familias: JSON.parse(this.ciclos)
+
+    };
+  },
+  created: function created() {
+    this.familia = JSON.parse(this.ciclos);
+    console.log("Hola !!!!" + this.familia); //Añadimos el color para el estilo
+
+    this.familia.forEach(function (familia) {
+      familia.estilo_color = "text-" + familia.color + "-800";
+    });
+  },
+  methods: {
+    ciclos_familia: function ciclos_familia() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/obtener_ciclos', {
+        familias: this.ciclos_selected
+      }).then(function (response) {
+        $('#ciclo').html(response.data.html);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/feria-main/familia-id.vue?vue&type=script&lang=js":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/feria-main/familia-id.vue?vue&type=script&lang=js ***!
@@ -16475,8 +16525,8 @@ __webpack_require__.r(__webpack_exports__);
 // import FamiliaII from "./feria-main/familia-ii.vue";
 // import VideoFeria from "./feria-main/video-feria";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'contenido_feria',
-  props: ['routeForm'],
+  name: 'FeriaMain',
+  props: ['route_form'],
   data: function data() {
     return {
       imagen: "ponencias?familia=Imagen y Sonio",
@@ -16863,18 +16913,7 @@ __webpack_require__.r(__webpack_exports__);
     mouse_leave: function mouse_leave(event) {
       this.seleccionado = false;
       console.log("Adiós");
-    } // allProducts(){
-    //     let self = this;
-    //     let urlAllProducts = this.url + '/api/products';
-    //     axios.get(urlAllProducts)
-    //         .then(response => {
-    //             self.products = response.data;
-    //         })
-    //         .catch(err => {
-    //
-    //         })
-    // }
-
+    }
   }
 });
 
@@ -16902,6 +16941,82 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.saludo), 1
   /* TEXT */
   )], 64
+  /* STABLE_FRAGMENT */
+  );
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crud/ciclosfamilias.vue?vue&type=template&id=070b70ef":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crud/ciclosfamilias.vue?vue&type=template&id=070b70ef ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Hola ", -1
+/* HOISTED */
+);
+
+var _hoisted_2 = {
+  "class": "flex flex-col justify-center border-purple-900  w-full p-6\n                    border-pink-700 rounded-3xl"
+};
+var _hoisted_3 = {
+  "class": "border border-pink-900 rounded-2xl p-4 text-xl",
+  "for": "familia"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Familias profesionales ");
+
+var _hoisted_5 = {
+  "class": " flex flex-row text-1xl mt-10 pl-10"
+};
+var _hoisted_6 = {
+  id: "ciclo",
+  "class": "border border-pink-900 rounded-2xl"
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Para mostrar ciclos, selecciona una familia", -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" A ver qué veo -{{ciclos}}- "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.familia, function (ciclo) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+      type: "checkbox",
+      id: "familia",
+      "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+        return _ctx.ciclos_selected = $event;
+      }),
+      name: "familia[]",
+      value: ciclo.familia,
+      "class": ["py-1", ciclo.estilo_color],
+      onChange: _cache[2] || (_cache[2] = function ($event) {
+        return $options.ciclos_familia();
+      })
+    }, null, 42
+    /* CLASS, PROPS, HYDRATE_EVENTS */
+    , ["value"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, _ctx.ciclos_selected]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                       color={{$index}}>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+      "class": [ciclo.estilo_color, "ml-3"]
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(ciclo.familia), 3
+    /* TEXT, CLASS */
+    )]);
+  }), 256
+  /* UNKEYED_FRAGMENT */
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <label class=\"p-4 text-xl\" for=\"familia\">Ciclo/s a los que va dirigido </label>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        Falta implementar esta parte"), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.ciclos_selected, function (c) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(c), 1
+    /* TEXT */
+    );
+  }), 256
+  /* UNKEYED_FRAGMENT */
+  ))])])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -17084,15 +17199,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "flex flex-row  w-screen justify-between items-center h-75v items-center  bg-fondo1"
+  "class": "flex flex-row  w-screen justify-between items-center h-75v items-center  bg-fondo_new "
 };
 var _hoisted_2 = {
-  "class": "flex flex-col justify-between pl-8 pr-8 w-1/3  content-end items-end"
+  "class": "z-10 md:z-50 invisible md:visible flex flex-col justify-between pl-8 pr-8 w-1/3  content-end items-end"
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   id: "informatica",
-  "class": "self-end",
+  "class": "self-end w-100",
   src: "images/familias/si_informatica.png",
   alt: "Comercio"
 }, null, -1
@@ -17109,7 +17224,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 );
 
 var _hoisted_5 = {
-  "class": "flex flex-col justify-center items-center w-1/3"
+  "class": "flex flex-col justify-center items-center w-screen md:w-1/3"
 };
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" title=\"Presentación jornadas\" poster='images/logo_calidad.png' id=video> ");
@@ -17149,7 +17264,7 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(". ");
 
 var _hoisted_14 = {
-  "class": "flex flex-col justify-between pl-8 pr-8 w-1/3  content-start"
+  "class": "invisible md:visible z-10 md:z-50  flex flex-col justify-between pl-8 pr-8 w-1/3  content-start"
 };
 
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
@@ -17173,14 +17288,14 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.informatica,
-    "class": ["botonFamilia flex-grow justify-end w-1/2 ", {
+    "class": ["  botonFamilia flex-grow justify-end w-3/5", {
       active: $data.isActiveInformatica
     }]
   }, [_hoisted_3], 10
   /* CLASS, PROPS */
   , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.imagen,
-    "class": ["botonFamilia justify-end w-1/2", {
+    "class": ["botonFamilia justify-end w-3/5", {
       active: $data.isActiveImagen
     }]
   }, [_hoisted_4], 10
@@ -17191,7 +17306,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     ref: "videoRef",
     id: "video",
-    "class": "h-70v",
+    "class": "",
     autoplay: true,
     controls: "",
     playsinline: ""
@@ -17199,14 +17314,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* HYDRATE_EVENTS, NEED_PATCH */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.comercio,
-    "class": ["botonFamilia w-1/2 ", {
+    "class": ["botonFamilia  w-3/5", {
       active: $data.isActiveComercio
     }]
   }, [_hoisted_15], 10
   /* CLASS, PROPS */
   , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.jornadas,
-    "class": ["botonFamilia w-1/2", {
+    "class": ["botonFamilia  w-3/5", {
       active: $data.isActiveJornadas
     }]
   }, [_hoisted_16], 10
@@ -17463,11 +17578,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ponencias_main_ponencias_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/ponencias-main/ponencias.vue */ "./resources/js/components/ponencias-main/ponencias.vue");
 /* harmony import */ var _components_feria_main_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/feria_main.vue */ "./resources/js/components/feria_main.vue");
 /* harmony import */ var _components_ponencias_main_listado_ponencias_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ponencias-main/listado-ponencias.vue */ "./resources/js/components/ponencias-main/listado-ponencias.vue");
-/* harmony import */ var _components_feria_main_familia_ii_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/feria-main/familia-ii.vue */ "./resources/js/components/feria-main/familia-ii.vue");
-/* harmony import */ var _components_feria_main_familia_id_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/feria-main/familia-id.vue */ "./resources/js/components/feria-main/familia-id.vue");
-/* harmony import */ var _components_feria_main_familia_si_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/feria-main/familia-si.vue */ "./resources/js/components/feria-main/familia-si.vue");
-/* harmony import */ var _components_feria_main_familia_sd_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/feria-main/familia-sd.vue */ "./resources/js/components/feria-main/familia-sd.vue");
-/* harmony import */ var _components_componente_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/componente.vue */ "./resources/js/components/componente.vue");
+/* harmony import */ var _components_crud_ciclosfamilias_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/crud/ciclosfamilias.vue */ "./resources/js/components/crud/ciclosfamilias.vue");
+/* harmony import */ var _components_feria_main_familia_ii_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/feria-main/familia-ii.vue */ "./resources/js/components/feria-main/familia-ii.vue");
+/* harmony import */ var _components_feria_main_familia_id_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/feria-main/familia-id.vue */ "./resources/js/components/feria-main/familia-id.vue");
+/* harmony import */ var _components_feria_main_familia_si_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/feria-main/familia-si.vue */ "./resources/js/components/feria-main/familia-si.vue");
+/* harmony import */ var _components_feria_main_familia_sd_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/feria-main/familia-sd.vue */ "./resources/js/components/feria-main/familia-sd.vue");
+/* harmony import */ var _components_componente_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/componente.vue */ "./resources/js/components/componente.vue");
+
 
 
 
@@ -17484,9 +17601,10 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     ponencias: _components_ponencias_main_ponencias_vue__WEBPACK_IMPORTED_MODULE_1__.default,
     listadoPonencias: _components_ponencias_main_listado_ponencias_vue__WEBPACK_IMPORTED_MODULE_3__.default,
-    componente: _components_componente_vue__WEBPACK_IMPORTED_MODULE_8__.default,
+    componente: _components_componente_vue__WEBPACK_IMPORTED_MODULE_9__.default,
     // modal_empresa,
-    contenido_feria: _components_feria_main_vue__WEBPACK_IMPORTED_MODULE_2__.default // main_feria_ii,
+    feriaMain: _components_feria_main_vue__WEBPACK_IMPORTED_MODULE_2__.default,
+    ciclosfamilias: _components_crud_ciclosfamilias_vue__WEBPACK_IMPORTED_MODULE_4__.default // main_feria_ii,
     // main_feria_id,
     // main_feria_si,
     // main_feria_sd,
@@ -18144,6 +18262,32 @@ _componente_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__f
 
 /***/ }),
 
+/***/ "./resources/js/components/crud/ciclosfamilias.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/crud/ciclosfamilias.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ciclosfamilias_vue_vue_type_template_id_070b70ef__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ciclosfamilias.vue?vue&type=template&id=070b70ef */ "./resources/js/components/crud/ciclosfamilias.vue?vue&type=template&id=070b70ef");
+/* harmony import */ var _ciclosfamilias_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ciclosfamilias.vue?vue&type=script&lang=js */ "./resources/js/components/crud/ciclosfamilias.vue?vue&type=script&lang=js");
+
+
+
+_ciclosfamilias_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _ciclosfamilias_vue_vue_type_template_id_070b70ef__WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_ciclosfamilias_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/components/crud/ciclosfamilias.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ciclosfamilias_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
 /***/ "./resources/js/components/feria-main/familia-id.vue":
 /*!***********************************************************!*\
   !*** ./resources/js/components/feria-main/familia-id.vue ***!
@@ -18372,6 +18516,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/crud/ciclosfamilias.vue?vue&type=script&lang=js":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/crud/ciclosfamilias.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ciclosfamilias_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ciclosfamilias_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ciclosfamilias.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crud/ciclosfamilias.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/feria-main/familia-id.vue?vue&type=script&lang=js":
 /*!***********************************************************************************!*\
   !*** ./resources/js/components/feria-main/familia-id.vue?vue&type=script&lang=js ***!
@@ -18512,6 +18672,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_componente_vue_vue_type_template_id_194e9f93__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_componente_vue_vue_type_template_id_194e9f93__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./componente.vue?vue&type=template&id=194e9f93 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/componente.vue?vue&type=template&id=194e9f93");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/crud/ciclosfamilias.vue?vue&type=template&id=070b70ef":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/crud/ciclosfamilias.vue?vue&type=template&id=070b70ef ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ciclosfamilias_vue_vue_type_template_id_070b70ef__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ciclosfamilias_vue_vue_type_template_id_070b70ef__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ciclosfamilias.vue?vue&type=template&id=070b70ef */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crud/ciclosfamilias.vue?vue&type=template&id=070b70ef");
 
 
 /***/ }),

@@ -34,7 +34,7 @@ class CicloController extends Controller
 
         info("aquí estoy ",[]);
 
-        info ("Se ha pasado ",$_POST);
+        info ("Se ha pasado ",$request->familias);
 
 
 
@@ -70,6 +70,7 @@ class CicloController extends Controller
             }
             $html .= "</div>";
         }
+        info("Se va a devolver ", [$html]);
         return response()->json(['html' => $html]);
    }
 

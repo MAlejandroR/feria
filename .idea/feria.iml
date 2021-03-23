@@ -120,5 +120,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="prueba" />
+    <orderEntry type="module" module-name="obj" />
   </component>
 </module>

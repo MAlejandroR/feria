@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 .ppal {
-    @apply flex flex-col flex-1 justify-between h-screen mx-10 bg-contain bg-fondo_feria;
+    @apply flex flex-col flex-1 justify-between h-screen mx-10 ;
 }
 
 .panel_empresa {
@@ -22,7 +22,7 @@
 
 /*active:translate-y-0 */
 .boton2 {
-    @apply m-1 py-2 px-4
+    @apply mx-1  px-4
     2xl:bg-red-200
     text-red-800
     font-semibold border
@@ -57,9 +57,12 @@
     transition ease-in-out duration-150 m-2;
 }
 
+/*.active {*/
+/*    @apply  visible  transform    translate-x-4    translate-y-4 bg-purple-300 z-50*/
+/*    transition duration-500 bg-blue-600 bg-red-600 transform -translate-y-1 scale-110;*/
+/*}*/
 .active {
-    @apply transform    translate-x-4    translate-y-4 bg-purple-300
-    transition duration-500 bg-blue-600 bg-red-600 transform -translate-y-1 scale-110;
+    @apply  visible  transform    skew-y-12 scale-150 animate-pulse;
 }
 
 /*active:bg-gray-900*/

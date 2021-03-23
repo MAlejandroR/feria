@@ -1,6 +1,6 @@
 @extends("layout")
 
-@section('opciones')
+@section('boton_volver')
     <x-form.a-href href="{{route('feria-main')}}">
         Volver
     </x-form.a-href>
@@ -11,8 +11,8 @@
         <h1 class="text-yellow-800 text-3xl">Actualmente no hay empresas insertadas</h1>
     @endempty
     @isset($empresas)
-
-        <table class="w-1/2 divide-y divide-gray-200 m-5 overflow-y-auto h-65v">
+<div class="w-1/2 overflow-auto h-65v">
+        <table class="divide-y divide-gray-200 m-5 overflow-x-auto table-fixed">
             {{--                <table class="max-w-full divide-y divide-gray-200 m-5">--}}
             <thead class="bg-gray-50">
             <tr>
@@ -38,14 +38,14 @@
                     <x-form.td>{{$empresa->ponente}}</x-form.td>
                     <x-form.td class=" text-right text-sm font-medium">
                         <a href="{{route("empresas.edit",[$empresa])}}"
-                           class="text-indigo-600 hover:text-indigo-900"><img class="w-8 h-8"
-                                                                              src="{{asset("images/editar.png")}}"></a>
+                           class="text-indigo-600 hover:text-indigo-900"><img class="w-12 h-8"
+                                                                              src="{{asset("images/icon/editar.png")}}"></a>
                     </x-form.td>
                     <x-form.td>
                         <form action="{{route('empresas.destroy', [$empresa])}}" method="post">
                             @method("delete")
                             @csrf
-                            <input type="image" src="{{asset("images/borrar2.jpg")}}"
+                            <input type="image" src="{{asset("images/icon/borrar.png")}}"
                                    class=" w-8 h-8 text-indigo-600 hover:text-indigo-900"/>
                         </form>
                     </x-form.td>
@@ -54,7 +54,7 @@
             </tbody>
         </table>
 
-
+</div>
 
 
         {{--           --}}

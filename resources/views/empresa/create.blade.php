@@ -1,8 +1,4 @@
 @extends("layout")
-
-
-
-
 @section("contenido")
     <form action={{route('empresas.store')}} enctype="multipart/form-data" method='POST' id="form"
           class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 overflow-y-auto h-65v">
@@ -47,6 +43,22 @@ El Centro Público Integrado de Formación Profesional Los Enlaces comenzó a fu
 
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="ponente">
+                Email
+            </label>
+            <input
+                    value="Alumudena Hidalgo"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="email" id="email" type="email" placeholder="Email">
+        </div><div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="persona_contacto">
+                Persona de Contacto
+            </label>
+            <input
+                    value="Alumudena Hidalgo"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="persona_contacto" id="persona_contacto" type="text" placeholder="Peronsa de contacto" >
+        </div><div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="ponente">
                 Ponente
             </label>
             <input
@@ -73,25 +85,11 @@ El Centro Público Integrado de Formación Profesional Los Enlaces comenzó a fu
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name="duracion" id="date" type="number" placeholder="Duración en minutos" required>
         </div>
-        <div class="flex flex-col justify-center border-purple-900  w-full p-6
-                    border-pink-700 rounded-3xl">
-            <label class="border border-pink-900 rounded-2xl p-4 text-xl" for="familia">Familias profesionales
-                @foreach($ciclos as $index=> $ciclo)
-                    <div class=" flex flex-row text-1xl mt-10 pl-10">
-                        <input type="checkbox" id="familia" name="familia[]" value="{{$ciclo->familia}}"
-                               class="py-1  text-{{$ciclo->color}}-800 "
-                               color={{$index}}>
-                        <span class="ml-3 text-{{$ciclo->color}}-800">{{$ciclo->familia}}</span>
-                    </div>
-                @endforeach
-            </label>
-        </div>
-        <label class="p-4 text-xl" for="familia">Ciclo/s a los que va dirigido </label>
 
-        <div id='ciclo' class="border border-pink-900 rounded-2xl">
-            {{--            Falta implementar esta parte--}}
-            <h2>Para mostrar ciclos, selecciona una familia</h2>
-        </div>
+{{--       <ciclosfamilias ciclos='@json($ciclos)'>    </ciclosfamilias>--}}
+{{--       <ciclosfamilias ciclos='hola'>--}}
+       <ciclosfamilias ciclos='@json($ciclos)'>
+      </ciclosfamilias>
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="enlace">
                 Enlace
@@ -110,34 +108,35 @@ El Centro Público Integrado de Formación Profesional Los Enlaces comenzó a fu
         </div>
         <x-form.button> Guardar datos</x-form.button>
     </form>
+
 @endsection
 
 
 
 
-@section('script')
-    <script type="text/javascript">
-        // Llamada ajax para recuperar los ciclos de una familia que acabo de clicar
-        // O bien para anunlar dichos ciclos si lo he deselecccionado
-        // Retornará el html con el select-option con un listado de los ciclo de cada familia
-        // Pendiente pasar a vue
-        $("#form input[type=checkbox]").click( function () {
-            var ciclos =[] ;
-            // console.log("estoy por aquí ");
-            $("input:checkbox:checked").each(function () {
-                ciclos.push($(this).val());
-                // console.log("Cargando un elemento en el array "+$(this).val());
-            });
-            $.ajax({
-                url: "{{ route('ciclos.get_by_family')}}",
-                method: 'POST',
-                data :{'_token': "{{csrf_token()}}",'familias':ciclos},
-                success: function (data) {
-                    $('#ciclo').html(data.html);
-                }
-            });
-        });
+{{--@section('script')--}}
+{{--    <script type="text/javascript">--}}
+{{--        // Llamada ajax para recuperar los ciclos de una familia que acabo de clicar--}}
+{{--        // O bien para anunlar dichos ciclos si lo he deselecccionado--}}
+{{--        // Retornará el html con el select-option con un listado de los ciclo de cada familia--}}
+{{--        // Pendiente pasar a vue--}}
+{{--        $("#form input[type=checkbox]").click( function () {--}}
+{{--            var ciclos =[] ;--}}
+{{--            console.log("estoy por aquí ");--}}
+{{--            $("input:checkbox:checked").each(function () {--}}
+{{--                ciclos.push($(this).val());--}}
+{{--                // console.log("Cargando un elemento en el array "+$(this).val());--}}
+{{--            });--}}
+{{--            $.ajax({--}}
+{{--                url: "{{ route('ciclos.get_by_family')}}",--}}
+{{--                method: 'POST',--}}
+{{--                data :{'_token': "{{csrf_token()}}",'familias':ciclos},--}}
+{{--                success: function (data) {--}}
+{{--                    $('#ciclo').html(data.html);--}}
+{{--                }--}}
+{{--            });--}}
+{{--        });--}}
 
-    </script>
-@endsection
+{{--    </script>--}}
+{{--@endsection--}}
 

@@ -1,37 +1,22 @@
 @extends('layout')
-
-
-
-
-
 @section('contenido')
-
-
-
-
     @auth {{--Si estoy atenticado pongo opciones de administración--}}
-        <div class="h-10v">
-            <x-layout.nav>
-                @isset($msj)
-                    <div class="text-2xl text-white">{{$msj}}</div>
-                @endisset
-            </x-layout.nav>
-        </div>
-
-        <div class="h-65v overflow-y-auto">
-            <template>
-            <contenido_feria route_form="{{route('empresas.ponencias')}}">
-
-            </contenido_feria>
-            </template>
-        </div>
+        <x-layout.nav class="bg-fondo1"><!--h-5v-->
+            @isset($msj)
+                <div class="text-2xl text-white">{{$msj}}</div>
+            @endisset
+        </x-layout.nav>
+    <div class="h-70v overflow-y-auto flex flex-row ">
+        <feria-main route_form="{{route('empresas.ponencias')}}">
+        </feria-main>
+    </div>
     @endauth
     @guest
         <div class="h-75v overflow-y-auto flex flex-row ">
-
-            <contenido_feria route_form="{{route('empresas.ponencias')}}"/>
-
-
+            <feria-main route_form="{{route('empresas.ponencias')}}">
+            </feria-main>
         </div>
+
+
     @endguest
 @endsection

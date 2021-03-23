@@ -63,7 +63,7 @@ class EmpresaController extends Controller
 
     {
         $ciclos = DB::select("select distinct  familia, color from ciclos");
-//        dd($ciclos);
+        $ciclos = Ciclo::select('familia', 'color')->distinct()->get();
 
 
         return view("empresa.create", ['ciclos' => $ciclos]);
@@ -82,6 +82,7 @@ class EmpresaController extends Controller
         $empresa = new Empresa($request->input());
 
         $ciclos_empresa = new EmpresaCiclos($request->input());
+//        dd($ciclos_empresa);
 
 
         $name = $request->file('logo')->getClientOriginalName();;
@@ -90,6 +91,7 @@ class EmpresaController extends Controller
 
         $empresa->logo = $name;
         info("he guardado en estorage ", [$a]);
+
         $empresa->saveOrFail();
         $msj = "La empresa $empresa->empresa se ha guardado en la base de datos";
 
@@ -114,7 +116,7 @@ class EmpresaController extends Controller
 
             }
         info("Valor del mensaje ", [$msj]);
-        return view("feria-main", ['msj' => $msj]);
+        return view("feria", ['msj' => $msj]);
 
 
         //
@@ -141,7 +143,7 @@ class EmpresaController extends Controller
     public function edit(Empresa $empresa)
     {
 
-
+//dd($empresa);
         //Obtenemos todas las familias
         $familias = DB::select("select distinct familia,color from ciclos");
 
@@ -167,7 +169,7 @@ class EmpresaController extends Controller
                                                     where empresa =$empresa->id )");
         }
 
-//dd($ciclosSelect);
+
         return view("empresa.editar", ['empresa' => $empresa,
             'familias' => $familias,
             'familiasSelect' => $familiasSelect,
@@ -197,7 +199,6 @@ class EmpresaController extends Controller
             info("He guardado el fichero ", [$a]);
             $empresa->logo = $name;
         }
-
         $empresa->fill($request->input())->saveOrFail();
         return redirect()->route('empresas.index');
         //
@@ -221,20 +222,20 @@ class EmpresaController extends Controller
         $familia = $datos->familia;
         if ($familia == "jornadas") {
             $msj = "Jornadas pdf con listado de las jornadas ....Esto hay que gestionarlo aparte";
-          return view("empresa.ponencia,['msj'=>Smsj");
-          }
+            return view("empresa.ponencia,['msj'=>Smsj");
+        }
         //Obtener todas las empresas relacionadas con esta famliia ...
 
         //$primero todos los ciclos de una determinada familia
         $cod_ciclos = Ciclo::select("id")->where("familia", $datos->familia)->distinct()->get();
 //        dd($cod_empresa, $datos->familia);
         //Todas las empresas relacionadas con esos ciclos
-        $cod_empresas =EmpresaCiclos::select("empresa")
-                       ->whereIn("ciclo",$cod_ciclos)
-                       ->distinct()
-                       ->get();
+        $cod_empresas = EmpresaCiclos::select("empresa")
+            ->whereIn("ciclo", $cod_ciclos)
+            ->distinct()
+            ->get();
 //        dd($cod_empresas);
-        $empresas = Empresa::whereIn("id",$cod_empresas)->get();
+        $empresas = Empresa::whereIn("id", $cod_empresas)->get();
 
 //        echo "<h1>Mostrando empresas</h1>";
 //        foreach ($empresas as $empresa) {
@@ -243,14 +244,12 @@ class EmpresaController extends Controller
 //        echo "<h1>Fin de Mostrando empresas</h1>";
 //        dd($cod_ciclos, $cod_empresas,$empresas);
         $columnas = ceil(sqrt(count($empresas)));
-        info ("Número de empresas",[count($empresas )]);
+        info("Número de empresas", [count($empresas)]);
         $filas = $columnas;
 //        dd($empresas);
-        return view("empresa.ponencia",['empresas'=>$empresas,
-                                        "columnas"=>$columnas,
-                                         "filas"=>$filas ]);
-
-
+        return view("empresa.ponencia", ['empresas' => $empresas,
+            "columnas" => $columnas,
+            "filas" => $filas]);
 
 
     }

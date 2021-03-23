@@ -94,17 +94,6 @@ components:{
 
         }
 
-        // allProducts(){
-        //     let self = this;
-        //     let urlAllProducts = this.url + '/api/products';
-        //     axios.get(urlAllProducts)
-        //         .then(response => {
-        //             self.products = response.data;
-        //         })
-        //         .catch(err => {
-        //
-        //         })
-        // }
 
     },
 }

@@ -1,7 +1,8 @@
 import {createApp} from 'vue';
 import ponencias from './components/ponencias-main/ponencias.vue'
-import contenido_feria from './components/feria_main.vue';
+import feriaMain from './components/feria_main.vue';
 import listadoPonencias from './components/ponencias-main/listado-ponencias.vue';
+import ciclosfamilias from './components/crud/ciclosfamilias.vue';
 // import modal_empresa from './components/ponencias-main/modal_empresa.vue';
 
 import main_feria_ii from './components/feria-main/familia-ii.vue';
@@ -19,7 +20,8 @@ createApp({
         listadoPonencias,
         componente,
         // modal_empresa,
-        contenido_feria,
+        feriaMain,
+        ciclosfamilias,
         // main_feria_ii,
         // main_feria_id,
         // main_feria_si,

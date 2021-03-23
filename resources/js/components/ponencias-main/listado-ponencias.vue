@@ -80,7 +80,6 @@ export default {
         // console.log(this.empresas);
         this.ordena_horario();
         this.filas = this.filas + 1;
-
     },
 
     methods: {
@@ -95,10 +94,10 @@ export default {
             var minutoComienzoPonencia;
             var minutoFinPonencia;
 
-            var comienzo
-            var fin
-            var actual
-            var duracion
+            var comienzo;
+            var fin;
+            var actual;
+            var duracion;
             // console.log("En estado de ponencia");//36600
             horaComienzoPonencia = parseInt(horario.substr(0, 2));
             minutoComienzoPonencia = parseInt(horario.substr(3, 2));

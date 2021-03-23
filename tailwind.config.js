@@ -12,6 +12,8 @@ module.exports = {
             backgroundImage: theme => ({ // imágenes de background nada definitivo ...
                 "img_ponencias": "url('/images/background/bg_cubes.jpg')",
                 "fondo_feria": "url('/images/background/fondo_feria.png')",
+                "fondo_vicentin": "url('/images/background/fondo_vicentin.png')",
+
             }),
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
@@ -30,6 +32,8 @@ module.exports = {
             backgroundColor: {
                 'cabecera': "#333333",
                 'fondo': "#444344",
+                'fondo_new1': "#C4C2C4",
+                'fondo_new': "#C8C6C8",
                 'fondo1': "#9F9E9F",
                 'fondo3': "#D5D5Db",
                 'fondo2': "#EDEDED",

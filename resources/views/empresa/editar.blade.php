@@ -64,7 +64,23 @@
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name="ponente" id="ponente" type="text" placeholder="Ponente" required>
         </div>
-
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="ponente">
+                Email
+            </label>
+            <input
+                value="Alumudena Hidalgo"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="email" id="email" type="email" placeholder="Email">
+        </div><div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="persona_contacto">
+                Persona de Contacto
+            </label>
+            <input
+                value="Alumudena Hidalgo"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="persona_contacto" id="persona_contacto" type="text" placeholder="Peronsa de contacto" >
+        </div>
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="Date">
                 Hora comienzo
@@ -123,17 +139,20 @@
 
                 {{--            {{dd($ciclos)}}--}}
                 <div class='flex flex-row justify-content-around'>
+
                     @foreach ($ciclos as $nombre_familia=>$nombre_ciclos)
                         <div class='flex flex-col justify-center   w-1/4 p-6
                     border-$c-700 rounded-3xl'>
                             <h2 class='text-{{$nombre_ciclos[0]->color}}-700 text-xl mb-7'>{{$nombre_familia}}</h2>
                             @foreach($nombre_ciclos as $ciclo)
+
                                 @php
                                     $check = "";
                                 @endphp
 
 
                                 @foreach ($ciclosSelect as $ciclo_select)
+
                                      @if ($ciclo_select->nombre == $ciclo->nombre)
                                         @php
                                             $check = "checked";
@@ -142,14 +161,17 @@
                                 @endforeach
 
                                 <label for='' class='text-$c-800 flex flex-row'>
-                                    <input $ck type='checkbox' class='form-checkbox text-indigo-600'
-                                           name='ciclo['{{$nombre_familia}}'][]' value='{{$ciclo->nombre}}' {{$check}}/>
+
+                                    <input type='checkbox' class='form-checkbox text-indigo-600'
+                                           name="ciclo['{{$nombre_familia}}'][]" value='{{$ciclo->nombre}}' {{$check}}/>
                                     <span class='ml-2'>{{$ciclo->nombre}}</span>
+
                                 </label>
                                 <br/>
                             @endforeach
                         </div>
                     @endforeach
+
                 </div>
             @endisset
         </div>
@@ -170,42 +192,15 @@
                          src="{{asset("storage/logos/{$empresa->logo}")}}">
                 </div>
             </label>
-
             <input value="{{$empresa->logo}}"
 
                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                    name="logo" id="date" type="file" placeholder="Logo">
         </div>
+
         <x-form.button> Guardar datos</x-form.button>
     </form>
 @endsection
 
 
-
-
-@section('script')
-    <script type="text/javascript">
-        // Llamada ajax para recuperar los ciclos de una familia que acabo de clicar
-        // O bien para anunlar dichos ciclos si lo he deselecccionado
-        // Retornará el html con el select-option con un listado de los ciclo de cada familia
-        // Pendiente pasar a vue
-        $("#form input[type=checkbox]").click(function () {
-            var ciclos = [];
-            // console.log("estoy por aquí ");
-            $("input:checkbox:checked").each(function () {
-                ciclos.push($(this).val());
-                // console.log("Cargando un elemento en el array "+$(this).val());
-            });
-            $.ajax({
-                url: "{{ route('ciclos.get_by_family')}}",
-                method: 'POST',
-                data: {'_token': "{{csrf_token()}}", 'familias': ciclos},
-                success: function (data) {
-                    $('#ciclo').html(data.html);
-                }
-            });
-        });
-
-    </script>
-@endsection
 

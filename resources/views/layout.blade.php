@@ -13,18 +13,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 </head>
-
-
 <body>
-    <div class="ppal" id="app">
+<div class="ppal" id="app">
     <!-- Parte de cabecera, fijo en lugar de componente-->
     <div class='h-15v bg-white md:bg-cabecera flex flex-row  p-2
                 border border-red-400 rounded  justify-content-around items-center '>
         <img class='hidden md:block p-2 max-h-full w-1/4'
-             src="images/logos/enlaces_feria.png" alt='Logo Enlaces'/>
+             src="{{asset('images/logos/enlaces_feria.png')}}" alt='Logo Enlaces'/>
 
         <img class='display md:hidden object-center p-2 max-h-full max-w-full ml-10'
-             src="images/logos/enlaces_feria_movil.png " alt="Logo Enlaces"/>
+             src="{{asset('images/logos/enlaces_feria_movil.png')}} " alt="Logo Enlaces"/>
 
         <h1 class="hidden md:block text-7xl font-mono text-enlaces text-center
       max-h-full overflow-hidden place-self-right w-3/4">
@@ -34,14 +32,7 @@
         @yield ("boton_volver")
     </div>
     <!-- Parte de cabecera, fijo en lugar de componente-->
-
-
 @yield("contenido")
-
-
-
-
-
 <!--Pie en lugra de componente, inserto el html -->
     <div class="h-10v flex flex-row bg-enlaces justify-between">
         <div class="font-mono text-1xl flex flex-col justify-start p-2">
@@ -72,16 +63,17 @@
                     </a>
 
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 text-xl text-green-100 ">{{__('Register')}}</a>
-                    @endif
+                    {{--                    @if (Route::has('register'))--}}
+                    {{--                        <a href="{{ route('register') }}" class="ml-4 text-xl text-green-100 ">{{__('Register')}}</a>--}}
+                    {{--                    @endif--}}
                 @endauth
             </div>
         @endif
-        <slot></slot>
+{{--        <slot></slot>--}}
     </div>
 
-    </div>
+</div>
 </body>
+@yield("script")
 <script src="{{ mix('js/app.js') }}"></script>
 </html>

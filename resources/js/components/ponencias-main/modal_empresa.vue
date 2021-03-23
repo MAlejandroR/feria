@@ -16,10 +16,10 @@
             </button>
         </div>
 
-        <div class="m-5  font-mono italic">{{ empresa.descripcion }}</div>
-        <div class="m-5">Ponente: <span class="italic font-bold">{{ empresa.ponente }}</span></div>
+        <div class=" mx-10 m-5  font-mono italic">{{ empresa.descripcion }}</div>
+        <div class="text-2xl m-5">Ponente: <span class="italic font-bold">{{ empresa.ponente }}</span></div>
         <!--                    <div class="flex flex-row "-->
-        <div class="m-5">Hora ponencia: <span class="italic font-bold">{{ empresa.horario }}</span>
+        <div class="text-2xl m-5">Hora ponencia: <span class="italic font-bold">{{ empresa.horario }}</span>
             <span v-if="ponencia" class="ml-5 font-mono text-monospace
                   text-2xl p-1">Comienza en</span>
             <span v-else class="ml-5 font-mono text-monospace
@@ -29,6 +29,21 @@
                 {{ crono }}
             </span>
             <a class="botonFamilia bg-gray-600 " href="{{ empresa.enlace }}"> Accede a la ponencia de <span class="ml-2 text-xl italic">{{empresa.ponente}}</span></a>
+            <hr />
+
+            <div v-if="contacto" >
+                <div>Persona de contacto</div>
+            <span  class=" justify-center if ml-2 font-mono text-monospace text-white
+            text-2xl  bg-indigo-400 border-2 2xl:border-green-600 rounded bg-enlaces p-1 text-center">
+
+                Persona de contacto
+                <span class ="italic text-3xl text-blue-900">{{ empresa.persona_contacto }}</span>
+                Email
+                <span class ="italic text-3xl text-blue-900">{{empresa.email}}
+                    </span>
+            </span>
+            </div>
+
 
         </div>
 
@@ -53,12 +68,20 @@ export default {
             crono_segundos: "00",
             crono: "00:00:00",
             ponencia: true,
+            contacto:false,
 
         }
     },
     created() {
         console.log("verse " + this.showing);
         this.inicializa_crono();
+
+        console.log("Antes de evaluar Persona de contacto  -"+this.empresa.persona_contacto+"-" );
+
+        if (this.empresa.persona_contacto != "") {
+            console.log("Persona de contacto  -"+this.empresa.persona_contacto+"-" );
+            this.contacto = true;
+        }
     },
     mounted() {
         var self = this;
@@ -76,9 +99,9 @@ export default {
             var hora = parseInt(this.crono_horas);
             var minutos = parseInt(this.crono_minutos);
             var segundos = parseInt(this.crono_segundos);
-            console.log("Actualiza segundos "+segundos);
+            // console.log("Actualiza segundos "+segundos);
             segundos--;
-            console.log("Actualiza segundos "+segundos);
+            // console.log("Actualiza segundos "+segundos);
             if (segundos <= 0) {
                 minutos--;
                 segundos = 59;

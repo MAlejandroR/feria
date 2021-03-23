@@ -16756,12 +16756,19 @@ __webpack_require__.r(__webpack_exports__);
       crono_minutos: "00",
       crono_segundos: "00",
       crono: "00:00:00",
-      ponencia: true
+      ponencia: true,
+      contacto: false
     };
   },
   created: function created() {
     console.log("verse " + this.showing);
     this.inicializa_crono();
+    console.log("Antes de evaluar Persona de contacto  -" + this.empresa.persona_contacto + "-");
+
+    if (this.empresa.persona_contacto != "") {
+      console.log("Persona de contacto  -" + this.empresa.persona_contacto + "-");
+      this.contacto = true;
+    }
   },
   mounted: function mounted() {
     var self = this;
@@ -16776,10 +16783,9 @@ __webpack_require__.r(__webpack_exports__);
     actualiza_crono: function actualiza_crono() {
       var hora = parseInt(this.crono_horas);
       var minutos = parseInt(this.crono_minutos);
-      var segundos = parseInt(this.crono_segundos);
-      console.log("Actualiza segundos " + segundos);
-      segundos--;
-      console.log("Actualiza segundos " + segundos);
+      var segundos = parseInt(this.crono_segundos); // console.log("Actualiza segundos "+segundos);
+
+      segundos--; // console.log("Actualiza segundos "+segundos);
 
       if (segundos <= 0) {
         minutos--;
@@ -16883,7 +16889,8 @@ __webpack_require__.r(__webpack_exports__);
       empresa_actual: JSON.parse(this.empresa),
       seleccionado: false,
       pos_x: 0,
-      pos_y: 0
+      pos_y: 0,
+      mas_info: 'images/icon/mas_info.png'
     };
   },
   created: function created() {// this.allProducts();
@@ -16897,6 +16904,13 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     muestra_oculta_detalle: function muestra_oculta_detalle() {
       this.seleccionado = this.seleccionado == true ? false : true;
+
+      if (this.seleccionado == true) {// Intento de volver opaco lo de atrás
+
+        /*Enviar un mensaje para dar opacidad*/
+        // console.log("Valor de esto "+this.$refs['ponencias'].classList.value);
+        // this.$refs.ponencias.classList.value="bg-opacity-25";
+      }
     },
     mouse_over: function mouse_over(event) {
       this.seleccionado = true; // console.log("Hola");
@@ -17435,10 +17449,10 @@ var _hoisted_2 = {
   "class": "text-xl-center   text-4xl  text-enlaces font-mono"
 };
 var _hoisted_3 = {
-  "class": "m-5  font-mono italic"
+  "class": " mx-10 m-5  font-mono italic"
 };
 var _hoisted_4 = {
-  "class": "m-5"
+  "class": "text-2xl m-5"
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Ponente: ");
@@ -17447,7 +17461,7 @@ var _hoisted_6 = {
   "class": "italic font-bold"
 };
 var _hoisted_7 = {
-  "class": "m-5"
+  "class": "text-2xl m-5"
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Hora ponencia: ");
@@ -17475,6 +17489,34 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_15 = {
   "class": "ml-2 text-xl italic"
+};
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  key: 2
+};
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, "Persona de contacto", -1
+/* HOISTED */
+);
+
+var _hoisted_19 = {
+  "class": " justify-center if ml-2 font-mono text-monospace text-white\n            text-2xl  bg-indigo-400 border-2 2xl:border-green-600 rounded bg-enlaces p-1 text-center"
+};
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Persona de contacto ");
+
+var _hoisted_21 = {
+  "class": "italic text-3xl text-blue-900"
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Email ");
+
+var _hoisted_23 = {
+  "class": "italic text-3xl text-blue-900"
 };
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
@@ -17509,7 +17551,11 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.ponente), 1
   /* TEXT */
-  )])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 2112
+  )]), _hoisted_16, $data.contacto ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.persona_contacto), 1
+  /* TEXT */
+  ), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.empresa.email), 1
+  /* TEXT */
+  )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 });
@@ -17532,11 +17578,17 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "z-10 flex flex-row justify-center items-center"
 };
+var _hoisted_2 = {
+  "class": "text-xs text-red-700 self-end items-end flex flex-row"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("+ info");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_modal_empresa = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("modal_empresa");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <h1>Estoy en ponencias</h1>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-    "class": "relative bg-white p-3 rounded cursor-pointer ",
+    "class": " flex flex-col justify-center relative bg-white p-3 rounded cursor-pointer ",
     ref: "elemento",
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.muestra_oculta_detalle && $options.muestra_oculta_detalle.apply($options, arguments);
@@ -17549,7 +17601,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.empresa_actual.empresa), 1
   /* TEXT */
-  )])], 512
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+    "class": "w-8",
+    src: $data.mas_info
+  }, null, 8
+  /* PROPS */
+  , ["src"])])], 512
   /* NEED_PATCH */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_empresa, {
     showing: $data.seleccionado,

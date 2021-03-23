@@ -1,6 +1,6 @@
 <template>
     <!--        <h1>Estoy en ponencias</h1>-->
-    <div class="relative bg-white p-3 rounded cursor-pointer " ref='elemento'
+    <div class=" flex flex-col justify-center relative bg-white p-3 rounded cursor-pointer " ref='elemento'
          @click="muestra_oculta_detalle">
         <!--         @mouseleave="mouse_leave">-->
         <div class="z-10 flex flex-row justify-center items-center">
@@ -9,6 +9,7 @@
             <img :src=src alt="" class="max-w-5v max-h-5v w-20 h-20 rounded-lg mx-auto ">
             <h1> {{ empresa_actual.empresa }}</h1>
         </div>
+        <div class="text-xs text-red-700 self-end items-end flex flex-row">+  info<img class="w-8" :src='mas_info'></div>
 
 
     </div>
@@ -54,6 +55,7 @@ components:{
             seleccionado: false,
             pos_x: 0,
             pos_y: 0,
+            mas_info:'images/icon/mas_info.png',
         }
     },
     created() {
@@ -71,6 +73,13 @@ components:{
     methods: {
         muestra_oculta_detalle: function () {
             this.seleccionado = this.seleccionado == true ? false : true;
+            if (this.seleccionado==true) {
+                // Intento de volver opaco lo de atrás
+                /*Enviar un mensaje para dar opacidad*/
+                // console.log("Valor de esto "+this.$refs['ponencias'].classList.value);
+                // this.$refs.ponencias.classList.value="bg-opacity-25";
+            }
+
         },
 
         mouse_over: function (event) {

@@ -15,8 +15,7 @@
 @section('contenido')
     {{--    --}}
 
-    <div class="flex flex-row justify-between bg-fondo_feria bg-cover h-75v" id="ponencias" p-3>
-
+    <div ref="ponencias" id="ponencias" class="flex flex-row justify-between bg-fondo_feria bg-cover h-75v" id="ponencias" p-3>
         @isset($msj)
             <h1>{{$msj}}</h1><!--Aquí para el tema de ferias o no ....-->
         @endisset
@@ -41,7 +40,8 @@
                 {{--            id="{{$empresa->id}}">--}}
             </div>
             <div class="w-60v">
-                <div class="grid grid-cols-{{$columnas}} gap-4  grid-flow-cols  m-5 auto-rows-max overflow-y-auto h-65v">
+                <div
+                    class="grid grid-cols-{{$columnas}} gap-4  grid-flow-cols  m-5 auto-rows-max overflow-y-auto h-65v">
                     @foreach($empresas as $empresa)
                         <ponencias src="{{asset("storage/logos/$empresa->logo")}}"
                                    empresa="{{(json_encode($empresa))}}"></ponencias>
